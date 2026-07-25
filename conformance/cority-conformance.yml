@@ -1,0 +1,24 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cority.com/legal-center/security
+note: >-
+  Cross-cutting and compliance standards Cority publishes. API-level protocol conformance
+  (OAuth2/OIDC/RFC 9457/pagination) is not asserted here because the Cority Enviance
+  OpenAPI/Swagger definition is gated behind a Connectors license and could not be
+  harvested; this file captures the provider's published compliance posture only.
+standards:
+- id: iso-27001
+  conforms: true
+  evidence: ISO/IEC 27001 BSI assurance mark published on cority.com/legal-center/security
+- id: iso-27017
+  conforms: true
+  evidence: ISO/IEC 27017:2015 listed on the security page
+- id: iso-27018
+  conforms: true
+  evidence: ISO/IEC 27018:2019 listed on the security page
+- id: iso-9001
+  conforms: true
+  evidence: ISO 9001 referenced on the security page
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliance program and Data Processing Addendum published in the Legal Center

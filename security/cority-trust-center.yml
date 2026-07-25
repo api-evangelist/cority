@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+probe: false
+source: https://www.cority.com/legal-center/security
+url: https://trust.cority.com/
+trust_center: https://trust.cority.com/
+security_page: https://www.cority.com/legal-center/security
+certifications:
+- ISO/IEC 27001
+- ISO/IEC 27017:2015
+- ISO/IEC 27018:2019
+- ISO 9001
+compliance:
+- GDPR
+sub_processors: https://www.cority.com/legal-center/cority-sub-processors/
+data_processing_addendum: https://www.cority.com/legal-center/data-processing-addendum/
+evidence:
+- source: https://www.cority.com/legal-center/security
+  keywords: [ISO/IEC 27001, ISO/IEC 27017:2015, ISO/IEC 27018:2019, ISO 9001, GDPR]
+  note: BSI ISO/IEC 27001 assurance mark published on the security page
+- source: https://trust.cority.com/
+  status: 200
+  note: hosted trust center portal (dynamic; certifications enumerated from the security page)
+notes: >-
+  FedRAMP is referenced on Cority's Security & Governance marketing page but was not
+  verified here as a held authorization, so it is intentionally omitted from certifications[].

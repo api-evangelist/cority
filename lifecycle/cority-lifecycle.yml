@@ -1,0 +1,18 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.cority.com/legal-center/
+status_page: https://status.cority.com/
+status_page_provider: Atlassian Statuspage
+sla:
+  url: https://www.cority.com/legal-center/service-level-agreement/
+  archived: https://www.cority.com/legal-center/archived-service-level-agreement/
+versioning:
+  scheme: unknown
+  note: >-
+    The Cority Enviance API is documented via a Swagger UI at api.enviance.com but the
+    spec is gated behind a Connectors license, so a versioning/deprecation policy could
+    not be confirmed from the public surface.
+deprecation:
+  policy_url: null
+  sunset_header: null
+deprecated_operations: []

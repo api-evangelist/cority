@@ -1,8 +1,25 @@
 aid: cority
 name: Cority
-description: 'Cority is a company surfaced as a portfolio company of norwest-venture-partners and added
-  to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Cority is an enterprise Environmental, Health, Safety, and Quality (EHSQ)
+  and sustainability software provider, founded in 1985 as Medgate and headquartered
+  in Toronto, Canada. Its CorityOne platform converges occupational health, safety
+  and incident management, industrial hygiene, environmental and ESG/sustainability
+  reporting, quality, and audit/compliance management for more than 1,500 enterprise
+  organizations worldwide, layered with its Cortex AI agents. Cority exposes RESTful
+  integration through the Cority Enviance API (Swagger-documented), used to connect
+  CorityOne with corporate and third-party systems under a Connectors license.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://www.cority.com/wp-content/uploads/2025/06/Cority_Logo_RGB_orange.svg
 url: https://raw.githubusercontent.com/api-evangelist/cority/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +29,33 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-- Unknown
-apis: []
+- Environmental Health and Safety
+- EHS
+- Sustainability
+- ESG
+- Occupational Health
+- Quality Management
+- Compliance
+- Enterprise Software
+apis:
+- name: Cority Enviance API
+  description: RESTful API and SDK for developing custom interfaces with the Cority
+    Enviance system and integrating it with corporate and third-party systems. Use
+    requires an express Cority Enviance Connectors license.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - EHS
+  - Environmental
+  - Integration
+  properties:
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +64,38 @@ maintainers:
 common:
 - type: Website
   url: https://cority.com
+- type: Documentation
+  url: https://api.enviance.com/
+- type: APIReference
+  url: https://api.enviance.com/swagger
+- type: Blog
+  url: https://www.cority.com/blog/
+- type: Support
+  url: https://www.cority.com/contact-us/
+- type: SignUp
+  url: https://www.cority.com/get-a-demo/
+- type: TermsOfService
+  url: https://www.cority.com/legal-center/terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.cority.com/legal-center/privacy-policy/
+- type: StatusPage
+  url: https://status.cority.com/
+- type: TrustCenter
+  url: https://trust.cority.com/
+- type: Compliance
+  url: https://www.cority.com/legal-center/security
+- type: DomainSecurity
+  url: security/cority-domain-security.yml
+- type: TrustCenter
+  url: security/cority-trust-center.yml
+- type: Conformance
+  url: conformance/cority-conformance.yml
+- type: Lifecycle
+  url: lifecycle/cority-lifecycle.yml
+- type: LLMsTxt
+  url: llms/cority-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -8,6 +8,17 @@ description: 'Cority is an enterprise Environmental, Health, Safety, and Quality
   organizations worldwide, layered with its Cortex AI agents. Cority exposes RESTful
   integration through the Cority Enviance API (Swagger-documented), used to connect
   CorityOne with corporate and third-party systems under a Connectors license.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown

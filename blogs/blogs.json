@@ -2,6 +2,27 @@
   "repo": "cority",
   "feeds": [
     {
+      "source": "https://www.cority.com/resources/blog/",
+      "feed_url": "https://www.cority.com/resources/blog/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.cority.com/blog/",
+      "feed_url": "https://www.cority.com/blog/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.cority.com/feed/",
+      "feed_url": "https://www.cority.com/feed/",
+      "title": "",
+      "saved": 1,
+      "method": "feed"
+    },
+    {
       "source": "https://api.enviance.com/swagger",
       "feed_url": "https://api.enviance.com/swagger",
       "title": "",
@@ -9,6 +30,6 @@
       "method": "none"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "post_count": 1,
+  "fetched": "2026-10-10T13:15:00Z"
 }

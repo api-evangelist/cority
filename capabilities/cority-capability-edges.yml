@@ -1,0 +1,47 @@
+slug: cority
+provider: Cority
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Security
+  spec_file: cority-security-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: SecurityService.CreateGroup, GetGroupMembers, SetGroupMembers, AddGroupMembers, RemoveGroupMember
+  reason: Manages security groups and their user membership — authorisation group administration, i.e.
+    identity and access management within the application. Not security monitoring or threat response.
+- tag: Eql
+  spec_file: cority-eql-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.7
+  evidence: POST /ver2/EqlService.svc/query ... 'eql service execute'; 'create data view'; schemas Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo,
+    EqlReportSheet, EqlDataViewPublishConfigInfo
+  reason: 'The tag exposes a query language service: define and version data views, publish them via publish
+    connections, and execute queries that return report sheets/cells. That is reporting and BI delivery
+    over the platform''s data, i.e. Analytics & BI Management. Confidence held at 0.7 because it is also
+    arguably generic query plumbing.'
+- tag: ScimIdentity
+  spec_file: cority-scimidentity-api-openapi.yml
+  capability_id: BC-4230.50
+  capability_id_l1: BC-4230
+  capability_name: Tenant Identity Federation
+  confidence: 0.7
+  evidence: POST /ver2/ScimIdentityService.svc/scim/v1/Users ... ListUsers, CreateGroup, GetSchemas; schema
+    ScimUser, ScimGroup
+  reason: Standard SCIM v1 user and group provisioning endpoints exposed by the SaaS so customer identity
+    providers can federate and lifecycle-manage tenant user accounts — matches 'lifecycle of tenant user
+    accounts via single sign-on and SCIM'. Some ambiguity versus generic IAM (BC-620.20).

@@ -1,0 +1,244 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/cority-enviance-openapi.yml
+vocabulary:
+  name: Cority Domain Vocabulary
+  description: 'Terms declared by Cority''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-20'
+  terms:
+  - term: Activity
+    definition: 'Resource group in the contract; its operation POST /ver2/ActivityService.svc/activities: Create an Activity envianceSdk.activities.createActivity
+      ``` [ { "name": "Activity Name", "description": "Activity Description", "templateIdOrName": "Template Name", "fields": [ { "name": "Aspect",
+      "values": [ "Air pollution control waste" ] }, { "name": "Start Date", "values": [ "2012-09-19T20:00:00" ] }, { "name": "Type", "values":
+      [ "Spill", "Near Miss" ] } ], "properties": [ { "propertyIdOrNam'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Authentication
+    definition: 'Resource group in the contract; its operation POST /ver2/AuthenticationService.svc/oauthtoken: Get Access Token'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Bulk
+    definition: 'Resource group in the contract; its operation POST /ver2/BulkService.svc/batches: envianceSdk.bulk.queryBatches ``` [ { "page":
+      0, "pageSize": 10, "withCount": true, "onlyCurrentUser": true }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: ChemicalGroup
+    definition: 'Resource group in the contract; its operation POST /ver2/ChemicalGroupService.svc/chemicalGroups: envianceSdk.chemicalgroups.createChemicalGroup
+      ``` [ { "name": "Chemical Group Name", "description": "Chemical Group Description", "chemicals": [ "896197B8-E007-4169-8C03-D9D0E8411150",
+      "FF710D9F-4367-4C0C-A5CB-497CB18FA842" ] }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: ChemicalList
+    definition: 'Resource group in the contract; its operation POST /ver2/ChemicalListService.svc/chemicalLists: envianceSdk.chemicallists.createChemicalList
+      ``` [ { "name": "Chemical List Name", "description": "Chemical List Description", "chemicalListHistoryItems": [ { "beginDate": "2012-01-01T20:00:00",
+      "limits": [ { "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842", "limit": "1" }, { "chemicalIdOrAlias": "5376DF01-45B5-4153-ACCF-8E208DB69979",
+      "limit": "1" } ] }, { "beginDate": "2013-01-01T20:0'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Chemical
+    definition: 'Resource group in the contract; its operation POST /ver2/ChemicalService.svc/chemicals: envianceSdk.chemicals.createChemical
+      ``` [ { "name": "Chemical Name", "casnum": "0", "alias": "chemicalAlias", "description": "chemical description", "historyItems": [ { "beginDate":
+      "2012-01-01T20:00:00", "Mw": "1", "antA": "1", "antB": "1", "antC": "1", "antAk": "1", "antBk": "1", "vp60": "1", "density": "1", "dipprA":
+      "1", "dipprB": "1", "dipprC": "1", "dipprD": "1", "dipprE": "1", "dipprF": "1'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Command
+    definition: 'Resource group in the contract; its operation GET /ver2/CommandService.svc/commands/{commandId}: Returns information about a
+      previously submitted command (any API which is asynchronous).'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: CompliancePermissions
+    definition: 'Resource group in the contract; its operation GET /ver2/CompliancePermissionService.svc/locations/permissions/{locationId}: Get
+      Permissions per location envianceSdk.compliancePermission.getLocationPermission ``` [ "324a63d8-35df-473f-b8d8-514872c7f70e", "onsuccess",
+      "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Compliance
+    definition: 'Resource group in the contract; its operation POST /ver2/ComplianceService.svc/locations: Creates a new Location object in the
+      Compliance Model, optionally by copying the structure from another Location to the new Location.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: CustomField
+    definition: 'Resource group in the contract; its operation GET /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}: envianceSdk.customFields.getCustomField
+      ``` [ "nameOrID", "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Data
+    definition: 'Resource group in the contract; its operation POST /ver2/DataService.svc/calculations/calculationperiods: envianceSdk.data.getCalculationPeriods
+      ``` [ { "start": { "relativity": "Current", "periodType": "CalendarDay" }, "end": { "relativity": "Current", "periodType": "Day", "periodCount":
+      1 }, "intervalType": "Hourly", "factor": 1, "limit": 100, "timezones": [] }, "onsuccess", "onerror" ] [ { "start": { "relativity": "Absolute",
+      "absoluteDate": "2012-01-01T00:00:00" }, "end": { "relativity": "Current"'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Document
+    definition: 'Resource group in the contract; its operation POST /ver2/DocumentService.svc/documents: envianceSdk.documents.createDocument
+      ``` [ { "name": "test-name", "description": "test-description", "folder": "/", "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQg'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Eql
+    definition: 'Resource group in the contract; its operation POST /ver2/EqlService.svc/dataview: Save EQL query as a data view.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Event
+    definition: 'Resource group in the contract; its operation POST /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events: Creates a new Event
+      in the specified Event Log.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: FormTemplate
+    definition: 'Resource group in the contract; its operation POST /ver2/FormTemplateService.svc/formtemplates: Create form template in enviance
+      system ** SDK API:** ''envianceSdk.formtemplates.createFormTemplate (formTemplateInfo, onsuccess, onerror)'' ** SDK API:** ''envianceSdk.formtemplates.createFormTemplateAsync
+      (formTemplateInfo, onsuccess, onerror)'' ``` POST /formtemplates HTTP/1.1 Content-Type: application/json; charset=UTF-8 { "formTemplateInfo"
+      : { "name": "Form Template REST API Demo - t222", "desc'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: MaterialData
+    definition: 'Resource group in the contract; its operation POST /ver2/MaterialDataService.svc/materialdata/deletedatacommands/{locationIdOrPathOrUniqueTag}:
+      envianceSdk.materialData.deleteMaterialData ``` [ "/Division for MDLG/FAC for MDLG", [ "6B6BB16B-C207-416C-B818-1DB075AA453C", "004D8F0D-C03A-4A65-BFD1-3CFFDDF99569"
+      ], "true", "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: MaterialGroup
+    definition: 'Resource group in the contract; its operation POST /ver2/MaterialGroupService.svc/materialGroups: envianceSdk.materialGroups.createMaterialGroup
+      ``` [ { "name": "Material Group Name", "description": "Material Group Description", "materialIdOrNames": [ "Material Name 1", "Material
+      Name 2" ] }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: MaterialProperty
+    definition: 'Resource group in the contract; its operation POST /ver2/MaterialPropertyService.svc/materialProperties: envianceSdk.materialProperties.createMaterialProperty
+      ``` [ { "name": "PFBP Property Name", "description": "VBP Description", "propertyType": "Formula Based Primary", "dataType": "Numeric",
+      "formulaHistory": [ { "beginDate": "2012-01-01T20:00:00", "Script": "1 \u002B SUM([Chem_MW])" }, { "beginDate": "2013-01-01T20:00:00", "Script":
+      "1 \u002B [Prop_PFBP1]" } ] }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Material
+    definition: 'Resource group in the contract; its operation POST /ver2/MaterialService.svc/materials: envianceSdk.materials.createMaterial
+      ``` [ { "name": "Material Name", "description": "Material Description", "templateIdOrName": "Template Name", "materialAvailabilityFlag":
+      "true", "fields": [ { "name": "Aspect", "values": [ "Air pollution control waste" ] }, { "name": "Start Date", "values": [ "2012-09-19T20:00:00"
+      ] }, { "name": "Type", "values": [ "Spill", "Near Miss" ] } ], "chemicals": [ { "'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: MaterialTemplate
+    definition: 'Resource group in the contract; its operation POST /ver2/MaterialTemplateService.svc/materialTemplates: envianceSdk.materialTemplates.createMaterialTemplate
+      ``` [ { "name": "Material Template Name", "description": "Material Template Description", "fields": [ "field name 1", "field name 2" ] },
+      "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Message
+    definition: 'Resource group in the contract; its operation POST /ver2/MessageService.svc/messages: Queues a message for delivery to the Enviance
+      Inbox for a specified recipient, as well as optionally to the recipient e-mail address.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Package
+    definition: 'Resource group in the contract; its operation POST /ver2/PackageService.svc/packages: envianceSdk.packages.createPackage ```
+      [ { "name": "Tracker 001", "description": "Incident tracking and management.", "displayPage": "/index.html", "iconSrc": "/imgs/icon.png",
+      "isLocked": "false" }, "onsuccess", "onerror" ] ``` envianceSdk.packages.createPackageItem ``` [ "Tracker 001", { "package": "p1", "path":
+      "p1.htm", "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZG'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Portal
+    definition: 'Resource group in the contract; its operation GET /ver2/PortalService.svc/portal/dashboard: envianceSdk.portal.getDashboard ```
+      [ "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Report
+    definition: 'Resource group in the contract; its operation POST /ver2/ReportService.svc/reports/executereportcommands: envianceSdk.reports.execute
+      ``` [ { "format": "Html", "from": "2012-02-01T00:00:00", "parameters": { "objects": [ "/Division X/Facility 1", "52fbb610-0fa5-4873-9f2b-53cdb0bb00f2"
+      ] }, "reportIdOrPath": "715C32AE-F2C7-45B9-B8A6-5D8D1A65D001", "to": "2012-02-10T00:00:00" }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Requirement
+    definition: 'Resource group in the contract; its operation POST /ver2/RequirementService.svc/requirements: envianceSdk.requirements.createRequirement
+      ``` [ { "name": "Requirement Name", "requirementType": "RequirementType", "activeDate": "2010-02-22T00:00:00", "requirementTemplateIdOrName":
+      "Requirement Template 1", "responsibleUserIdOrName": "BTaylor", "parentIdOrPath": "Division For Mac TestFacility For Mac Test", "frequencies":
+      [ { "beginDate": "2011-02-22T00:00:00", "endDate": "2012-03-22T00:00:00"'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: ScimIdentity
+    definition: 'Resource group in the contract; its operation POST /ver2/ScimIdentityService.svc/scim/v1/Groups: Create a new group in Enviance
+      system.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Security
+    definition: 'Resource group in the contract; its operation POST /ver2/SecurityService.svc/groups: Creates a new user group.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Sync
+    definition: 'Resource group in the contract; its operation GET /ver2/SyncService.svc/lastchanges: envianceSdk.sync.getLastChanges ``` [ "onsuccess",
+      "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: TagScheme
+    definition: 'Resource group in the contract; its operation POST /ver2/TagSchemeService.svc/tagSchemes: envianceSdk.tagSchemes.createTagScheme
+      ``` [ { "name": "Tag Scheme Name", "description": "Tag Scheme 1 description", "enforceUniqueness": "1" }, "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Tag
+    definition: 'Resource group in the contract; its operation POST /ver2/TagService.svc/tags: Creates a new Tag.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Task
+    definition: 'Resource group in the contract; its operation POST /ver2/TaskService.svc/tasks: envianceSdk.tasks.createTask ``` [ { "name":
+      "Task1", "description": "Perform a spot check every month on the steam valves.", "dueDate": "2012-12-08T09:00:00", "timeZone": { "name":
+      "Pacific Time (US \u0026 Canada) (UTC-08:00) (With DST)" }, "assignor": "dnk", "assignees": [ { "userIdOrName": "dnk" }, { "groupIdOrName":
+      "Administrators" } ], "calendars": [ "System", "My" ], "objects": [ "/1" ], "d'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: UOMService
+    definition: 'Resource group in the contract; its operation POST /ver2/UOMService.svc/uom: Creates a new Location object in the Compliance
+      Model, optionally by copying the structure from another Location to the new Location.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: UUID
+    definition: 'Resource group in the contract; its operation GET /ver2/UUIDService.svc/currentsession: envianceSdk.uuid.getCurrentSession ```
+      [ "onsuccess", "onerror" ] ```'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: WorkflowRole
+    definition: 'Resource group in the contract; its operation POST /ver2/WorkflowRoleService.svc/workflowrole: envianceSdk.workflows.createWorkflowRole
+      ``` [ { "name": "WorkflowRole1", "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml
+  - term: Workflow
+    definition: 'Resource group in the contract; its operation POST /ver2/WorkflowService.svc/workflows: envianceSdk.workflows.createWorkflows
+      ``` [ [ { "workflowTypeName": "workflow Type Name", "name": "workflow name 1", "uniqueId": "uniqueId - 0000-1-1", "parentWorkflowSourceCustomField":
+      { "id": null, "name": "UDF name" }, "dueDate": "2013-02-07T00:00:00", "comment": "my comment", "calendars": [ "My", "Object", "System" ],
+      "objects": [ "/Generation - 1/NE TV" ], "documents": [ "Folder1Document1.tx'
+    tags:
+    - Resource Group
+    source: openapi/cority-enviance-openapi.yml

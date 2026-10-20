@@ -1,0 +1,139 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 8
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - docs
+  - identity
+  - other
+  - status
+  - website
+hosts:
+- host: api.cority.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: cority.com
+  role: api
+  relation: own
+- host: api.enviance.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - spec-found
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  - APIReference
+  serves:
+  - api
+  - docs
+  - spec
+  registrable_domain: enviance.com
+  role: docs
+  relation: other-domain
+- host: cority.com
+  found_by:
+  - pointer
+  - probed
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: cority.com
+  role: website
+  relation: own
+- host: dev.cority.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - well-known
+  types: []
+  serves:
+  - docs
+  status: 200
+  registrable_domain: cority.com
+  role: other
+  relation: own
+- host: resources.cority.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: cority.com
+  role: other
+  relation: own
+- host: status.cority.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: cority.com
+  role: status
+  relation: own
+- host: trust.cority.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - TrustCenter
+  serves: []
+  registrable_domain: cority.com
+  role: other
+  relation: own
+- host: uc.cority.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: cority.com
+  role: other
+  relation: own
+- host: www.cority.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Security
+  - Blog
+  - BlogRSS
+  - PrivacyPolicy
+  - Newsroom
+  - Leadership
+  - Support
+  - SignUp
+  - TermsOfService
+  - Compliance
+  serves: []
+  registrable_domain: cority.com
+  role: identity
+  relation: own

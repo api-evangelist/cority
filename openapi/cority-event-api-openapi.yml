@@ -1,0 +1,610 @@
+openapi: 3.2.0
+info:
+  title: Cority Event API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Event across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Event
+paths:
+  /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events:
+    post:
+      tags:
+      - Event
+      description: 'Creates a new Event in the specified Event Log. Events can only be created for manual Event Logs. Attempting to create an Event on an automatic Event Log will result in an error.
+
+
+        **Security:** All users.
+
+
+        **SDK API:** `envianceSdk.events.createEvent(eventLogIdOrTag, eventInfo, onsuccess, onerror)`
+
+        null
+
+
+        envianceSdk.events.createEvent
+
+        ```
+
+        [
+
+        "ae6cac58-1953-4965-82b4-1f2621fc808d",
+
+        {
+
+        "name": "Excess Stack Emission",
+
+        "beginDate": "2012-10-01T01:22:00",
+
+        "endDate": "2012-10-01T01:25:00",
+
+        "state": "Open",
+
+        "complianceType": "Internal",
+
+        "acceptAsDeviation": "false",
+
+        "requirementIdOrPath": "Generation/Stacks/Stack 1/NOx Emission",
+
+        "fields": [
+
+        {
+
+        "name": "Collected By",
+
+        "values": [
+
+        "Isaac Newton"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Measured",
+
+        "values": [
+
+        "Yes"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Impact",
+
+        "values": [
+
+        "Air"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Next Measure Time",
+
+        "values": [
+
+        "2012-11-19T12:00:00"
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.CreateEvent
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: eventLogIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateEvent'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateEvent'
+        required: true
+      summary: Enviance rest services ver2 events impl event service create event
+      x-summary-source: derived
+  /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}:
+    get:
+      tags:
+      - Event
+      description: 'envianceSdk.events.getEvent
+
+        ```
+
+        [
+
+        "eventlog_id_or_tag",
+
+        "event_id_or_tag",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.GetEvent
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: eventLogIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
+      summary: Enviance rest services ver2 events impl event service get event
+      x-summary-source: derived
+    patch:
+      tags:
+      - Event
+      description: 'Updates an existing Event.
+
+
+        **Security:** All users.
+
+
+        **SDK API:** `envianceSdk.events.updateEvent(eventLogIdOrTag, eventIdOrTag, eventInfo, onsuccess, onerror)`
+
+        null
+
+
+        envianceSdk.events.updateEvent
+
+        ```
+
+        [
+
+        "ae6cac58-1953-4965-82b4-1f2621fc808d",
+
+        "event_id_or_tag",
+
+        {
+
+        "name": "Excess Stack Emission",
+
+        "beginDate": "2012-10-01T01:22:00",
+
+        "endDate": "2012-10-01T01:25:00",
+
+        "state": "Open",
+
+        "complianceType": "Internal",
+
+        "acceptAsDeviation": "false",
+
+        "requirementIdOrPath": "Generation/Stacks/Stack 1/NOx Emission",
+
+        "fields": [
+
+        {
+
+        "name": "Collected By",
+
+        "values": [
+
+        "Isaac Newton"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Measured",
+
+        "values": [
+
+        "Yes"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Impact",
+
+        "values": [
+
+        "Air"
+
+        ]
+
+        },
+
+        {
+
+        "name": "Next Measure Time",
+
+        "values": [
+
+        "2012-11-19T12:00:00"
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.UpdateEvent
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: eventLogIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEvent'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateEvent'
+        required: true
+      summary: Enviance rest services ver2 events impl event service update event
+      x-summary-source: derived
+    delete:
+      tags:
+      - Event
+      description: 'envianceSdk.events.deleteEvent
+
+        ```
+
+        [
+
+        "eventlog_id_or_tag ",
+
+        "event_id_or_tag",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.DeleteEvent
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: eventLogIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventIdOrTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 events impl event service delete event
+      x-summary-source: derived
+components:
+  schemas:
+    CreateEvent:
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
+      type: object
+      format: CreateEvent
+    UpdateEvent:
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
+      type: object
+      format: UpdateEvent
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    Enviance.RestServices.Ver2.Events.EventInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        taskId:
+          type: string
+          format: guid
+          uniqueItems: false
+        state:
+          type: string
+          uniqueItems: false
+        complianceType:
+          type: string
+          uniqueItems: false
+        acceptAsDeviation:
+          type: boolean
+          uniqueItems: false
+        requirementIdOrPath:
+          type: string
+          uniqueItems: false
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Udfs.Property'
+          uniqueItems: false
+        documents:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Events.EventInfo
+    Enviance.RestServices.Udfs.Property:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        urlItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.Business.Udf.Rest.UrlItem'
+          uniqueItems: false
+        values:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        caption:
+          type: string
+          uniqueItems: false
+        captionLocalized:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Udfs.Property
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

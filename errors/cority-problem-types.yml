@@ -1,0 +1,19 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/cority-enviance-openapi.yml
+format: custom
+envelope:
+  media_type: null
+  schema: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup
+coverage:
+  operations: 252
+  statuses_declared: 1
+problems:
+- status: default
+  title: null
+  description: not available
+  operations: 252
+  media_types: []
+  schema: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup

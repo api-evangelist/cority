@@ -1,11 +1,9 @@
 generated: '2026-07-18'
 method: searched
 source: https://www.cority.com/legal-center/security
-note: >-
-  Cross-cutting and compliance standards Cority publishes. API-level protocol conformance
-  (OAuth2/OIDC/RFC 9457/pagination) is not asserted here because the Cority Enviance
-  OpenAPI/Swagger definition is gated behind a Connectors license and could not be
-  harvested; this file captures the provider's published compliance posture only.
+note: Cross-cutting and compliance standards Cority publishes. API-level protocol conformance (OAuth2/OIDC/RFC 9457/pagination) is not asserted
+  here because the Cority Enviance OpenAPI/Swagger definition is gated behind a Connectors license and could not be harvested; this file captures
+  the provider's published compliance posture only.
 standards:
 - id: iso-27001
   conforms: true
@@ -22,3 +20,18 @@ standards:
 - id: gdpr
   conforms: true
   evidence: GDPR compliance program and Data Processing Addendum published in the Legal Center
+- id: swagger-2.0
+  conforms: true
+  evidence: the document declares swagger-2.0
+- id: oauth2
+  conforms: false
+  evidence: 'securitySchemes: Basic (basic), EnvianceAuth (apiKey)'
+- id: rfc9457
+  conforms: false
+  evidence: no response declares application/problem+json
+- id: idempotency
+  conforms: false
+  evidence: no idempotency key parameter on mutating operations
+- id: pagination
+  conforms: true
+  evidence: list operations take limit, page

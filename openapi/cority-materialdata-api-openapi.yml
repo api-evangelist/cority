@@ -1,0 +1,604 @@
+openapi: 3.2.0
+info:
+  title: Cority Material Data API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged MaterialData across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: MaterialData
+paths:
+  ? /ver2/MaterialDataService.svc/materialdata/{activityIdOrNameOrUniqueTag}/begin/{completeBegin}/end/{completeEnd}/{locationIdOrPathOrUniqueTag}
+  : get:
+      tags:
+      - MaterialData
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.GetMaterialData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: activityIdOrNameOrUniqueTag
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: completeBegin
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: completeEnd
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationIdOrPathOrUniqueTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo'
+      summary: Enviance rest services ver2 material activity data impl material data service…
+      x-summary-source: derived
+  /ver2/MaterialDataService.svc/materialdata/deletedatacommands/{locationIdOrPathOrUniqueTag}:
+    post:
+      tags:
+      - MaterialData
+      description: 'envianceSdk.materialData.deleteMaterialData
+
+        ```
+
+        [
+
+        "/Division for MDLG/FAC for MDLG",
+
+        [
+
+        "6B6BB16B-C207-416C-B818-1DB075AA453C",
+
+        "004D8F0D-C03A-4A65-BFD1-3CFFDDF99569"
+
+        ],
+
+        "true",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DeleteMaterialData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: locationIdOrPathOrUniqueTag
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteMaterialData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteMaterialData'
+        required: true
+      summary: Enviance rest services ver2 material activity data impl material data service…
+      x-summary-source: derived
+  /ver2/MaterialDataService.svc/materialdata/download:
+    post:
+      tags:
+      - MaterialData
+      description: 'envianceSdk.materialData.downloadMaterialData
+
+        ```
+
+        [
+
+        {
+
+        "activityIdOrNameOrUniqueTag": "Activity for MDLG",
+
+        "completeBegin": "2015-05-29T00:00:00",
+
+        "completeEnd": "2015-05-29T00:00:00",
+
+        "objectIdOrPathOrUniqueTag": "/Division for MDLG/FAC for MDLG"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DownloadMaterialData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadMaterialData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DownloadMaterialData'
+        required: true
+      summary: Enviance rest services ver2 material activity data impl material data service…
+      x-summary-source: derived
+  /ver2/MaterialDataService.svc/materialdata/enterdatacommands/:
+    post:
+      tags:
+      - MaterialData
+      description: 'envianceSdk.materialData.enterMaterialData
+
+        ```
+
+        [
+
+        [
+
+        {
+
+        "parentIdOrPathOrUniqueTag": "/Division for MDLG/FAC for MDLG",
+
+        "activityIdOrNameOrUniqueTag": "Activity for MDLG",
+
+        "complete": "2015-05-29T00:00:00",
+
+        "collector": "Create MdlG-Happy path",
+
+        "dataLines": [
+
+        {
+
+        "materialIdOrNameOrUniqueTag": "Material 1 for MDLG",
+
+        "startTime": "2015-05-27T00:00:00",
+
+        "endTime": "2015-05-28T00:00:00",
+
+        "data": [
+
+        {
+
+        "propertyIdOrNameOrUniqueTag": "SUV10",
+
+        "value": "1"
+
+        },
+
+        {
+
+        "propertyIdOrNameOrUniqueTag": "SUV11",
+
+        "value": "2"
+
+        }
+
+        ]
+
+        }
+
+        ]
+
+        }
+
+        ],
+
+        true,
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.EnterMaterialData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnterMaterialData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/EnterMaterialData'
+        required: true
+      summary: Enviance rest services ver2 material activity data impl material data service…
+      x-summary-source: derived
+  /ver2/MaterialDataService.svc/materialdata/upload:
+    post:
+      tags:
+      - MaterialData
+      description: Upload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput html control or filecontent as Base64 encoded string. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.UploadMaterialData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UploadMaterialData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UploadMaterialData'
+        required: true
+      summary: Enviance rest services ver2 material activity data impl material data service…
+      x-summary-source: derived
+components:
+  schemas:
+    DownloadMaterialData:
+      properties:
+        activityIdOrNameOrUniqueTag:
+          type: string
+          uniqueItems: false
+        completeBegin:
+          type: string
+          uniqueItems: false
+        completeEnd:
+          type: string
+          uniqueItems: false
+        objectIdOrPathOrUniqueTag:
+          type: string
+          uniqueItems: false
+      type: object
+      format: DownloadMaterialData
+    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo:
+      properties:
+        materialIdOrNameOrUniqueTag:
+          type: string
+          uniqueItems: false
+        mdlGroupId:
+          type: string
+          format: guid
+          uniqueItems: false
+        startTime:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endTime:
+          type: string
+          format: date-time
+          uniqueItems: false
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo
+    EnterMaterialData:
+      properties:
+        mdlGroupsInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo'
+          uniqueItems: false
+        partialProcess:
+          type: string
+          uniqueItems: false
+      type: object
+      format: EnterMaterialData
+    DeleteMaterialData:
+      properties:
+        mdlGroupIds:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+      type: object
+      format: DeleteMaterialData
+    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo:
+      required:
+      - complete
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        parentIdOrPathOrUniqueTag:
+          type: string
+          uniqueItems: false
+        activityIdOrNameOrUniqueTag:
+          type: string
+          uniqueItems: false
+        complete:
+          type: string
+          format: date-time
+          uniqueItems: false
+        collector:
+          type: string
+          uniqueItems: false
+        dataLines:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo:
+      properties:
+        dataLineId:
+          type: string
+          format: guid
+          uniqueItems: false
+        propertyIdOrNameOrUniqueTag:
+          type: string
+          uniqueItems: false
+        value:
+          type: number
+          format: double
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo
+    UploadMaterialData:
+      properties:
+        objectIdOrPathOrUniqueTag:
+          type: string
+          uniqueItems: false
+      type: object
+      format: UploadMaterialData
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

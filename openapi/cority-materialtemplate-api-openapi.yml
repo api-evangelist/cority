@@ -1,0 +1,388 @@
+openapi: 3.2.0
+info:
+  title: Cority Material Template API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged MaterialTemplate across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: MaterialTemplate
+paths:
+  /ver2/MaterialTemplateService.svc/materialTemplates:
+    post:
+      tags:
+      - MaterialTemplate
+      description: 'envianceSdk.materialTemplates.createMaterialTemplate
+
+        ```
+
+        [
+
+        {
+
+        "name": "Material Template Name",
+
+        "description": "Material Template Description",
+
+        "fields": [
+
+        "field name 1",
+
+        "field name 2"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.CreateMaterialTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialTemplate'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialTemplate'
+        required: true
+      summary: Enviance rest services ver2 material activity material templates impl material…
+      x-summary-source: derived
+  /ver2/MaterialTemplateService.svc/materialTemplates/{materialTemplateIdOrName}:
+    get:
+      tags:
+      - MaterialTemplate
+      description: 'envianceSdk.materialTemplates.getMaterialTemplate
+
+        ```
+
+        [
+
+        "Material Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.GetMaterialTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: materialTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+      summary: Enviance rest services ver2 material activity material templates impl material…
+      x-summary-source: derived
+    patch:
+      tags:
+      - MaterialTemplate
+      description: 'envianceSdk.materialTemplates.updateMaterialTemplate
+
+        ```
+
+        [
+
+        "Material Template Name",
+
+        {
+
+        "name": "Material Template Name",
+
+        "description": "Material Template Description",
+
+        "fields": [
+
+        "field name 1",
+
+        "field name 2"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.UpdateMaterialTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: materialTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaterialTemplate'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateMaterialTemplate'
+        required: true
+      summary: Enviance rest services ver2 material activity material templates impl material…
+      x-summary-source: derived
+    delete:
+      tags:
+      - MaterialTemplate
+      description: 'envianceSdk.materialTemplates.deleteMaterialTemplate
+
+        ```
+
+        [
+
+        "Material Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.DeleteMaterialTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: materialTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 material activity material templates impl material…
+      x-summary-source: derived
+components:
+  schemas:
+    UpdateMaterialTemplate:
+      properties:
+        materialTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+      type: object
+      format: UpdateMaterialTemplate
+    Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        fields:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo
+    CreateMaterialTemplate:
+      properties:
+        materialTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateMaterialTemplate
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

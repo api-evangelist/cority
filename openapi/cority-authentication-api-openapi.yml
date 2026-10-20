@@ -1,0 +1,598 @@
+openapi: 3.2.0
+info:
+  title: Cority Authentication API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Authentication across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Authentication
+paths:
+  /ver2/AuthenticationService.svc/currentsession:
+    get:
+      tags:
+      - Authentication
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.GetCurrentSessionInfo
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver1.Security.SessionInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver1.Security.SessionInfo'
+      summary: Enviance rest services ver2 security impl authentication service get current…
+      x-summary-source: derived
+    delete:
+      tags:
+      - Authentication
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.EndCurrentSession
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 security impl authentication service end current…
+      x-summary-source: derived
+  /ver2/AuthenticationService.svc/oauthtoken:
+    post:
+      tags:
+      - Authentication
+      summary: Get Access Token
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByOAuthToken
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.OAuthGetAccesTokenResponseInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.OAuthGetAccesTokenResponseInfo'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthenticateByOAuthToken'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/AuthenticateByOAuthToken'
+        required: true
+  /ver2/AuthenticationService.svc/sessions:
+    post:
+      tags:
+      - Authentication
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.Authenticate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Enviance.RestServices.Ver1.Security.Credentials'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Enviance.RestServices.Ver1.Security.Credentials'
+        required: true
+      summary: Enviance rest services ver2 security impl authentication service authenticate
+      x-summary-source: derived
+  /ver2/AuthenticationService.svc/sessions/cert:
+    post:
+      tags:
+      - Authentication
+      summary: Authentication By Cert
+      description: 'Authenticate By Certificate
+
+
+        Creates a new session by authenticating via encrypted username and certification id.
+
+
+        **Security:** All users.
+
+
+        **SDK API:** `envianceSdk.authentication.authenticateByCert(encryptedUserName, certUniqueId, onsuccess, onerror)`
+
+
+        ```
+
+        PATCH /ver2/AuthenticationService.svc/sessions HTTP/1.1
+
+        Content-Type: application/json; charset=UTF-8
+
+
+        {
+
+        encryptedUserName: "username",
+
+        certUniqueId: "abcd23456789",
+
+        }
+
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByCert
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.EncryptedCredentials'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.EncryptedCredentials'
+        required: true
+  /ver2/AuthenticationService.svc/sessions/long:
+    post:
+      tags:
+      - Authentication
+      description: 'Creates long-living session from current (source session). It does not close source session, so user still in source session (getCurrentSession() should return same value).
+
+        Second call of createLongLivingSession() should reuse longSession if it already exists.
+
+        **Security:** All users.
+
+
+        **SDK API:** `envianceSdk.authentication.createLongLivingSession(onsuccess, onerror)`
+
+        null
+
+
+        envianceSdk.authentication.createLongLivingSession
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateLongLivingSession
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      summary: Enviance rest services ver2 security impl authentication service create long…
+      x-summary-source: derived
+  /ver2/AuthenticationService.svc/sessions/qlik:
+    post:
+      tags:
+      - Authentication
+      operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateQlikJWTToken
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo'
+      summary: Enviance rest services ver2 security impl authentication service create qlik…
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+        userId:
+          type: string
+          uniqueItems: false
+        userDirectory:
+          type: string
+          uniqueItems: false
+        stream:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo
+    Enviance.RestServices.Ver2.Security.OAuthGetAccesTokenResponseInfo:
+      properties:
+        AccessToken:
+          type: string
+          uniqueItems: false
+        RefreshToken:
+          type: string
+          uniqueItems: false
+        AccessTokenExpiryDateTime:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Security.OAuthGetAccesTokenResponseInfo
+    Enviance.RestServices.Ver1.Security.SessionInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        homeSystemId:
+          type: string
+          format: guid
+          uniqueItems: false
+        currentSystemId:
+          type: string
+          format: guid
+          uniqueItems: false
+        systems:
+          type: object
+        sessionTimeout:
+          type: integer
+          format: int32
+          uniqueItems: false
+        userId:
+          type: string
+          format: guid
+          uniqueItems: false
+        userTimeZone:
+          $ref: '#/components/schemas/Enviance.RestServices.Common.TimeZoneInfo'
+        appSettings:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver1.Security.SessionInfo
+    Enviance.RestServices.Ver1.Security.Credentials:
+      properties:
+        userName:
+          type: string
+          uniqueItems: false
+        password:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver1.Security.Credentials
+    AuthenticateByOAuthToken:
+      properties:
+        oAuthRefreshToken:
+          type: string
+          uniqueItems: false
+      type: object
+      format: AuthenticateByOAuthToken
+    Enviance.RestServices.Common.TimeZoneInfo:
+      properties:
+        id:
+          type: integer
+          format: int32
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        stdOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        dstOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        currentOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TimeZoneInfo
+    Enviance.RestServices.Ver2.Security.EncryptedCredentials:
+      description: "\n\n<!-- https://commonmark.org/help/ \nhttps://spec.commonmark.org/0.31.2/\n-->\n\n# EncryptedCredentials\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values. This API does not support historical custom fields (those with Track Value History enabled).\n\n**Security:** User with permission to Compliance Objects.\n\n**SDK API:**  `envianceSdk.compliance.updateLocation (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n**SDK API (async):**  `envianceSdk.compliance.updateLocationAsync (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n```\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"fieldValues\": [\n    {\"name\": \"Aspect\", \"values\": [\"Air pollution control waste\"]},\n    {\"name\": \"Start Date\", \"values\": [\"2012-09-19T20:00:00\"]},\n    {\"name\": \"Type\", \"values\": [\"Spill\", \"Near Miss\"]},\n    {\"name\": \"Category\", \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\n  ],\n  \"documents\": [\"/Folder A/Document.doc\"]\n  }\n}\n\n//EXAMPLE with MOVE\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"parentPath\": \"/New Manufacturing Division/Toys/\"\n  }\n}\n\n```"
+      properties:
+        encryptedUserName:
+          type: string
+          uniqueItems: false
+        certUniqueId:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Security.EncryptedCredentials
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

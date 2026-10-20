@@ -1,13 +1,13 @@
 aid: cority
+
 name: Cority
-description: 'Cority is an enterprise Environmental, Health, Safety, and Quality (EHSQ)
-  and sustainability software provider, founded in 1985 as Medgate and headquartered
-  in Toronto, Canada. Its CorityOne platform converges occupational health, safety
-  and incident management, industrial hygiene, environmental and ESG/sustainability
-  reporting, quality, and audit/compliance management for more than 1,500 enterprise
-  organizations worldwide, layered with its Cortex AI agents. Cority exposes RESTful
-  integration through the Cority Enviance API (Swagger-documented), used to connect
-  CorityOne with corporate and third-party systems under a Connectors license.'
+
+description: Cority is an enterprise Environmental, Health, Safety, and Quality (EHSQ) and sustainability software provider, founded in 1985 as
+  Medgate and headquartered in Toronto, Canada. Its CorityOne platform converges occupational health, safety and incident management, industrial
+  hygiene, environmental and ESG/sustainability reporting, quality, and audit/compliance management for more than 1,500 enterprise organizations
+  worldwide, layered with its Cortex AI agents. Cority exposes RESTful integration through the Cority Enviance API (Swagger-documented), used
+  to connect CorityOne with corporate and third-party systems under a Connectors license.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -19,6 +19,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -30,17 +31,28 @@ accessModel:
   source: []
   generated: '2026-07-22'
   method: derived
+
 image: https://www.cority.com/wp-content/uploads/2025/06/Cority_Logo_RGB_orange.svg
+
 url: https://raw.githubusercontent.com/api-evangelist/cority/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - norwest-venture-partners
-x-tier: stub
-x-tier-reason: portfolio-lead
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-10-20 (local-v5; was portfolio-lead)
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-10-06'
+
 tags:
 - Company
 - Environmental Health and Safety
@@ -51,28 +63,40 @@ tags:
 - Quality Management
 - Compliance
 - Enterprise Software
-apis:
-- name: Cority Enviance API
-  description: RESTful API and SDK for developing custom interfaces with the Cority
-    Enviance system and integrating it with corporate and third-party systems. Use
-    requires an express Cority Enviance Connectors license.
-  humanURL: https://api.enviance.com/
-  baseURL: https://api.enviance.com
-  tags:
-  - EHS
-  - Environmental
-  - Integration
-  properties:
-  - type: Documentation
-    url: https://api.enviance.com/
-  - type: APIReference
-    url: https://api.enviance.com/swagger
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/cority-agentic-access.yml
+- type: Plans
+  url: plans/cority-plans-pricing.yml
+- type: Spectral
+  url: rules/cority-rules.yml
+- type: Vocabulary
+  url: vocabulary/cority-vocabulary.yml
+- type: DataModel
+  url: data-model/cority-data-model.yml
+- type: ErrorCatalog
+  url: errors/cority-problem-types.yml
+- type: SecurityTxt
+  url: well-known/cority-status-security.txt
+- type: WellKnown
+  url: well-known/cority-well-known.yml
+- type: Hosts
+  url: hosts/cority-hosts.yml
+- type: IntegrationEdges
+  url: integrations/cority-integration-edges.yml
+- type: Vendors
+  url: vendors/cority-vendors.yml
+- type: Security
+  url: https://www.cority.com/security/
+- type: Authentication
+  url: authentication/cority-authentication.yml
 - url: https://www.cority.com/resources/blog/
   type: Blog
 - url: https://www.cority.com/feed/
@@ -81,6 +105,14 @@ common:
   url: https://cority.com
 - type: Documentation
   url: https://api.enviance.com/
+- type: PrivacyPolicy
+  url: https://www.cority.com/privacy-policy/
+- type: Newsroom
+  url: https://www.cority.com/news/
+- type: Leadership
+  url: https://www.cority.com/our-people/
+- type: StatusPage
+  url: https://status.cority.com/
 - type: APIReference
   url: https://api.enviance.com/swagger
 - type: Blog
@@ -109,8 +141,556 @@ common:
   url: lifecycle/cority-lifecycle.yml
 - type: LLMsTxt
   url: llms/cority-llms.txt
+
+apis:
+- aid: cority:cority-activity-api
+  name: Cority Activity API
+  description: The Activity API from Cority — 2 operation(s) for activity.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Activity
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-activity-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-authentication-api
+  name: Cority Authentication API
+  description: The Authentication API from Cority — 6 operation(s) for authentication.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-batchrequest-api
+  name: Cority Batch Request API
+  description: The BatchRequest API from Cority — 1 operation(s) for batchrequest.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - BatchRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-batchrequest-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-bulk-api
+  name: Cority Bulk API
+  description: The Bulk API from Cority — 10 operation(s) for bulk.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Bulk
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-bulk-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-chemical-api
+  name: Cority Chemical API
+  description: The Chemical API from Cority — 2 operation(s) for chemical.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Chemical
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-chemical-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-chemicalgroup-api
+  name: Cority Chemical Group API
+  description: The ChemicalGroup API from Cority — 3 operation(s) for chemicalgroup.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ChemicalGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-chemicalgroup-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-chemicallist-api
+  name: Cority Chemical List API
+  description: The ChemicalList API from Cority — 3 operation(s) for chemicallist.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ChemicalList
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-chemicallist-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-command-api
+  name: Cority Command API
+  description: The Command API from Cority — 1 operation(s) for command.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Command
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-command-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-compliance-api
+  name: Cority Compliance API
+  description: The Compliance API from Cority — 3 operation(s) for compliance.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Compliance
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-compliance-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-compliancepermissions-api
+  name: Cority Compliance Permissions API
+  description: The CompliancePermissions API from Cority — 1 operation(s) for compliancepermissions.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - CompliancePermissions
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-compliancepermissions-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-data-api
+  name: Cority Data API
+  description: The Data API from Cority — 10 operation(s) for data.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Data
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-data-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-document-api
+  name: Cority Document API
+  description: The Document API from Cority — 5 operation(s) for document.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Document
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-document-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-domainwhitelistservice-api
+  name: Cority Domain Whitelist Service API
+  description: The DomainWhitelistService API from Cority — 1 operation(s) for domainwhitelistservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - DomainWhitelistService
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-domainwhitelistservice-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-eql-api
+  name: Cority Eql API
+  description: The Eql API from Cority — 7 operation(s) for eql.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Eql
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-eql-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-event-api
+  name: Cority Event API
+  description: The Event API from Cority — 2 operation(s) for event.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Event
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-event-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-formtemplate-api
+  name: Cority Form Template API
+  description: The FormTemplate API from Cority — 7 operation(s) for formtemplate.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - FormTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-formtemplate-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-mainmenuservice-api
+  name: Cority Main Menu Service API
+  description: The MainMenuService API from Cority — 1 operation(s) for mainmenuservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MainMenuService
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-mainmenuservice-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-material-api
+  name: Cority Material API
+  description: The Material API from Cority — 2 operation(s) for material.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Material
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-material-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-materialdata-api
+  name: Cority Material Data API
+  description: The MaterialData API from Cority — 5 operation(s) for materialdata.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialData
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-materialdata-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-materialgroup-api
+  name: Cority Material Group API
+  description: The MaterialGroup API from Cority — 3 operation(s) for materialgroup.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-materialgroup-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-materialproperty-api
+  name: Cority Material Property API
+  description: The MaterialProperty API from Cority — 2 operation(s) for materialproperty.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-materialproperty-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-materialtemplate-api
+  name: Cority Material Template API
+  description: The MaterialTemplate API from Cority — 2 operation(s) for materialtemplate.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-materialtemplate-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-message-api
+  name: Cority Message API
+  description: The Message API from Cority — 2 operation(s) for message.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Message
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-message-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-package-api
+  name: Cority Package API
+  description: The Package API from Cority — 5 operation(s) for package.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Package
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-package-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-portal-api
+  name: Cority Portal API
+  description: The Portal API from Cority — 13 operation(s) for portal.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Portal
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-portal-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-report-api
+  name: Cority Report API
+  description: The Report API from Cority — 1 operation(s) for report.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-report-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-requirement-api
+  name: Cority Requirement API
+  description: The Requirement API from Cority — 4 operation(s) for requirement.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Requirement
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-requirement-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-scimidentity-api
+  name: Cority SCIM Identity API
+  description: The ScimIdentity API from Cority — 9 operation(s) for scimidentity.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ScimIdentity
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-scimidentity-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-security-api
+  name: Cority Security API
+  description: The Security API from Cority — 6 operation(s) for security.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Security
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-security-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-sync-api
+  name: Cority Sync API
+  description: The Sync API from Cority — 1 operation(s) for sync.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Sync
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-sync-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-tag-api
+  name: Cority Tag API
+  description: The Tag API from Cority — 2 operation(s) for tag.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Tag
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-tag-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-tagscheme-api
+  name: Cority Tag Scheme API
+  description: The TagScheme API from Cority — 2 operation(s) for tagscheme.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - TagScheme
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-tagscheme-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-task-api
+  name: Cority Task API
+  description: The Task API from Cority — 5 operation(s) for task.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-task-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-uomservice-api
+  name: Cority UOM Service API
+  description: The UOMService API from Cority — 4 operation(s) for uomservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - UOMService
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-uomservice-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-uuid-api
+  name: Cority UUID API
+  description: The UUID API from Cority — 2 operation(s) for uuid.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - UUID
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-uuid-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-wab-api
+  name: Cority Wab API
+  description: The Wab API from Cority — 1 operation(s) for wab.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Wab
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-wab-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-workflow-api
+  name: Cority Workflow API
+  description: The Workflow API from Cority — 18 operation(s) for workflow.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-workflow-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-workflowrole-api
+  name: Cority Workflow Role API
+  description: The WorkflowRole API from Cority — 3 operation(s) for workflowrole.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - WorkflowRole
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-workflowrole-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: cority:cority-custom-field-api
+  name: Cority Custom Field API
+  description: The Custom Field API from Cority — 3 operation(s) for custom field.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Custom Field
+  properties:
+  - type: OpenAPI
+    url: openapi/cority-custom-field-api-openapi.yml
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
-  pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v5

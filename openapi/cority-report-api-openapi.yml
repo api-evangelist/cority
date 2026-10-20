@@ -1,0 +1,169 @@
+openapi: 3.2.0
+info:
+  title: Cority Report API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Report across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Report
+paths:
+  /ver2/ReportService.svc/reports/executereportcommands:
+    post:
+      tags:
+      - Report
+      description: 'envianceSdk.reports.execute
+
+        ```
+
+        [
+
+        {
+
+        "format": "Html",
+
+        "from": "2012-02-01T00:00:00",
+
+        "parameters": {
+
+        "objects": [
+
+        "/Division X/Facility 1",
+
+        "52fbb610-0fa5-4873-9f2b-53cdb0bb00f2"
+
+        ]
+
+        },
+
+        "reportIdOrPath": "715C32AE-F2C7-45B9-B8A6-5D8D1A65D001",
+
+        "to": "2012-02-10T00:00:00"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Reports.Impl.ReportService.ExecuteReportCommand
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecuteReportCommand'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/ExecuteReportCommand'
+        required: true
+      summary: Enviance rest services ver2 reports impl report service execute report command
+      x-summary-source: derived
+components:
+  schemas:
+    ExecuteReportCommand:
+      properties:
+        reportExecutionInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Reports.ReportExecutionInfo'
+      type: object
+      format: ExecuteReportCommand
+    Enviance.RestServices.Ver2.Reports.ReportParameter:
+      properties:
+        objects:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        filterBy:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Reports.ReportParameter
+    Enviance.RestServices.Ver2.Reports.ReportExecutionInfo:
+      properties:
+        reportIdOrPath:
+          type: string
+          uniqueItems: false
+        from:
+          type: string
+          format: date-time
+          uniqueItems: false
+        to:
+          type: string
+          format: date-time
+          uniqueItems: false
+        format:
+          type: string
+          uniqueItems: false
+        parameters:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Reports.ReportParameter'
+      type: object
+      format: Enviance.RestServices.Ver2.Reports.ReportExecutionInfo
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

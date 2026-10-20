@@ -1,0 +1,3015 @@
+openapi: 3.2.0
+info:
+  title: Cority Portal API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Portal across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Portal
+paths:
+  /ver2/PortalService.svc/portal/dashboard:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getDashboard
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroupAllNestedByCurrentUser
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo'
+      summary: Enviance rest services ver2 portal impl portal service get page group all…
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPageGroups
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroups
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupWithPagesInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupWithPagesInfo'
+      summary: Enviance rest services ver2 portal impl portal service get page groups
+      x-summary-source: derived
+    post:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.createPageGroup
+
+        ```
+
+        [
+
+        {
+
+        "name": "Page Group1",
+
+        "properties": {
+
+        "key1": "value 1",
+
+        "key 2": "value 2"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePageGroup
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePageGroup'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePageGroup'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service create page group
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPageGroups
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPageGroup
+
+        ```
+
+        [
+
+        "Page Group Name or ID",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroup
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+      summary: Enviance rest services ver2 portal impl portal service get page group
+      x-summary-source: derived
+    patch:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.updatePageGroup
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        {
+
+        "name": "Page Group1 modified",
+
+        "properties": {
+
+        "key1": "value 1",
+
+        "key 2": "value 2"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePageGroup
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePageGroup'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePageGroup'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service update page group
+      x-summary-source: derived
+    delete:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.deletePageGroup
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePageGroup
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 portal impl portal service delete page group
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPages
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPageSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPages
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo'
+      summary: Enviance rest services ver2 portal impl portal service get pages
+      x-summary-source: derived
+    post:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.createPageGroup
+
+        ```
+
+        [
+
+        {
+
+        "name": "Page Group1",
+
+        "properties": {
+
+        "key1": "value 1",
+
+        "key 2": "value 2"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.createPage
+
+        ```
+
+        [
+
+        "Page Group",
+
+        {
+
+        "name": "Page Name",
+
+        "properties": {
+
+        "pageProperty1": "value 1",
+
+        "key 2": "value 2"
+
+        },
+
+        "accessLevels": {
+
+        "visibleToAll": "false",
+
+        "exceptUsers": [
+
+        {
+
+        "accesslevel": "view",
+
+        "id": "3afb765c-e75b-4e32-8870-34a69a4e6861"
+
+        }
+
+        ],
+
+        "exceptGroups": [
+
+        {
+
+        "accesslevel": "view",
+
+        "id": "3afb765c-e75b-4e32-8870-34a69a4e6861"
+
+        }
+
+        ]
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePage'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service create page
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPageGroups
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPageGroup
+
+        ```
+
+        [
+
+        "Page Group Name or ID",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPages
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPage
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPageSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+      summary: Enviance rest services ver2 portal impl portal service get page
+      x-summary-source: derived
+    patch:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.updatePageGroup
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        {
+
+        "name": "Page Group1 modified",
+
+        "properties": {
+
+        "key1": "value 1",
+
+        "key 2": "value 2"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.updatePage
+
+        ```
+
+        [
+
+        "Page Group",
+
+        "Page name",
+
+        {
+
+        "name": "Page Name",
+
+        "properties": {
+
+        "pageProperty1": "value 1",
+
+        "key 2": "value 2"
+
+        },
+
+        "accessLevels": {
+
+        "visibleToAll": "false",
+
+        "exceptUsers": [
+
+        {
+
+        "accesslevel": "view",
+
+        "id": "3afb765c-e75b-4e32-8870-34a69a4e6861"
+
+        }
+
+        ],
+
+        "exceptGroups": [
+
+        {
+
+        "accesslevel": "view",
+
+        "id": "3afb765c-e75b-4e32-8870-34a69a4e6861"
+
+        }
+
+        ]
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePage'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service update page
+      x-summary-source: derived
+    delete:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.deletePageGroup
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.deletePage
+
+        ```
+
+        [
+
+        "Parent Page Group",
+
+        "Page A",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 portal impl portal service delete page
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPanels
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanelSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanels
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo'
+      summary: Enviance rest services ver2 portal impl portal service get panels
+      x-summary-source: derived
+    post:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.createPanel
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        {
+
+        "name": "Panel Name",
+
+        "properties": {
+
+        "color": "green",
+
+        "Position": "top"
+
+        },
+
+        "accessLevels": {
+
+        "users": [
+
+        {
+
+        "id": "918b8c13-41e6-4b62-9e29-692e5ccbd6bb",
+
+        "accesslevel": "noaccess"
+
+        }
+
+        ]
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.createPanelTemplate
+
+        ```
+
+        [
+
+        {
+
+        "name": "Panel Template Name",
+
+        "properties": {
+
+        "Position": "absolute"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanel
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePanel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePanel'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service create panel
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPanels
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanel
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanelSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanelTemplates
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanel
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: panelIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+      summary: Enviance rest services ver2 portal impl portal service get panel
+      x-summary-source: derived
+    patch:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.updatePanel
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        {
+
+        "name": "Panel Name",
+
+        "properties": {
+
+        "color": "green",
+
+        "Position": "top"
+
+        },
+
+        "accessLevels": {
+
+        "users": [
+
+        {
+
+        "id": "918b8c13-41e6-4b62-9e29-692e5ccbd6bb",
+
+        "accesslevel": "noaccess"
+
+        }
+
+        ]
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.updatePanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        {
+
+        "name": "Panel Template Name",
+
+        "properties": {
+
+        "Position": "top"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanel
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: panelIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePanel'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePanel'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service update panel
+      x-summary-source: derived
+    delete:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.deletePanel
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.deletePanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanel
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: panelIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 portal impl portal service delete panel
+      x-summary-source: derived
+  ? /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}/settings
+  : put:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.savePanelSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "some user settngs for page",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePanelSettings
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: panelIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavePanelSettings'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SavePanelSettings'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service save panel settings
+      x-summary-source: derived
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPanelSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "Panel Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelSettings
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: panelIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+            application/xml:
+              schema:
+                type: string
+      summary: Enviance rest services ver2 portal impl portal service get panel settings
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/settings:
+    put:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.savePageSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "some user settngs for page",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePageSettings
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavePageSettings'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SavePageSettings'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service save page settings
+      x-summary-source: derived
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPageSettings
+
+        ```
+
+        [
+
+        "Page Group1",
+
+        "Page Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageSettings
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: pageGroupIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+            application/xml:
+              schema:
+                type: string
+      summary: Enviance rest services ver2 portal impl portal service get page settings
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/paneltemplates:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPanelTemplates
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplates
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      summary: Enviance rest services ver2 portal impl portal service get panel templates
+      x-summary-source: derived
+    post:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.createPanelTemplate
+
+        ```
+
+        [
+
+        {
+
+        "name": "Panel Template Name",
+
+        "properties": {
+
+        "Position": "absolute"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanelTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePanelTemplate'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePanelTemplate'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service create panel template
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/dashboard/paneltemplates/{panelTemplateIdOrName}:
+    get:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.getPanelTemplates
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.portal.getPanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: panelTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      summary: Enviance rest services ver2 portal impl portal service get panel template
+      x-summary-source: derived
+    patch:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.updatePanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        {
+
+        "name": "Panel Template Name",
+
+        "properties": {
+
+        "Position": "top"
+
+        }
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanelTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: panelTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePanelTemplate'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePanelTemplate'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service update panel template
+      x-summary-source: derived
+    delete:
+      tags:
+      - Portal
+      description: 'envianceSdk.portal.deletePanelTemplate
+
+        ```
+
+        [
+
+        "Panel Template Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanelTemplate
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: panelTemplateIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeletePanelTemplate'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/DeletePanelTemplate'
+        required: true
+      summary: Enviance rest services ver2 portal impl portal service delete panel template
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/powerBiReports:
+    get:
+      tags:
+      - Portal
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReports
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo'
+      summary: Enviance rest services ver2 portal impl portal service get reports
+      x-summary-source: derived
+  /ver2/PortalService.svc/portal/powerBiReports/{reportIdOrName}:
+    get:
+      tags:
+      - Portal
+      operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReport
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: reportIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo'
+      summary: Enviance rest services ver2 portal impl portal service get report
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo:
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo
+    DeletePanelTemplate:
+      type: object
+      format: DeletePanelTemplate
+    CreatePage:
+      properties:
+        pageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+      type: object
+      format: CreatePage
+    Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo:
+      properties:
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo'
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo
+    CreatePanel:
+      properties:
+        panelInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+      type: object
+      format: CreatePanel
+    Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo:
+      properties:
+        settings:
+          type: string
+          uniqueItems: false
+        permissions:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        panels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelFlatInfo'
+          uniqueItems: false
+        accessLevels:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pagegroupid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo
+    Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        accesslevel:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo:
+      properties:
+        accessLevels:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pageid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo
+    UpdatePage:
+      properties:
+        pageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+      type: object
+      format: UpdatePage
+    Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        reportId:
+          type: string
+          format: guid
+          uniqueItems: false
+        clientId:
+          type: string
+          format: guid
+          uniqueItems: false
+        tenantId:
+          type: string
+          format: guid
+          uniqueItems: false
+        token:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo:
+      properties:
+        visibleToAll:
+          type: boolean
+          uniqueItems: false
+        exceptUsers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+        exceptGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PageGroupWithPagesInfo:
+      properties:
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.IdNameInfo'
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupWithPagesInfo
+    Enviance.RestServices.Ver2.Portal.Dto.IdNameInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.IdNameInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo:
+      properties:
+        accessLevels:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pagegroupid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PanelFlatInfo:
+      properties:
+        settings:
+          type: string
+          uniqueItems: false
+        permissions:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        accessLevels:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pageid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelFlatInfo
+    UpdatePanel:
+      properties:
+        panelInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+      type: object
+      format: UpdatePanel
+    UpdatePanelTemplate:
+      properties:
+        panelTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      type: object
+      format: UpdatePanelTemplate
+    CreatePanelTemplate:
+      properties:
+        panelTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      type: object
+      format: CreatePanelTemplate
+    SavePanelSettings:
+      properties:
+        panelSettings:
+          type: string
+          uniqueItems: false
+      type: object
+      format: SavePanelSettings
+    CreatePageGroup:
+      properties:
+        pageGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+      type: object
+      format: CreatePageGroup
+    Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pageid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo
+    UpdatePageGroup:
+      properties:
+        pageGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+      type: object
+      format: UpdatePageGroup
+    Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pagegroupid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo
+    SavePageSettings:
+      properties:
+        pageSettings:
+          type: string
+          uniqueItems: false
+      type: object
+      format: SavePageSettings
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

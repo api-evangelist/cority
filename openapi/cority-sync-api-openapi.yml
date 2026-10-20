@@ -1,0 +1,128 @@
+openapi: 3.2.0
+info:
+  title: Cority Sync API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Sync across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Sync
+paths:
+  /ver2/SyncService.svc/lastchanges:
+    get:
+      tags:
+      - Sync
+      description: 'envianceSdk.sync.getLastChanges
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Sync.SyncService.GetLastChanges
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Common.ModuleChangeTime'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Common.ModuleChangeTime'
+      summary: Enviance rest services ver2 sync sync service get last changes
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Common.IdTimestamp:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        timestampUtc:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.IdTimestamp
+    Enviance.RestServices.Common.ModuleChangeTime:
+      properties:
+        module:
+          type: string
+          uniqueItems: false
+        timestampUtc:
+          type: string
+          format: date-time
+          uniqueItems: false
+        timestampUtcList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.IdTimestamp'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.ModuleChangeTime
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

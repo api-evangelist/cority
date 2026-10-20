@@ -1,0 +1,1321 @@
+openapi: 3.2.0
+info:
+  title: Cority Document API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Document across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Document
+paths:
+  /ver2/DocumentService.svc/documents:
+    post:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.createDocument
+
+        ```
+
+        [
+
+        {
+
+        "name": "test-name",
+
+        "description": "test-description",
+
+        "folder": "/",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==",
+
+        "fileName": "test-file-name"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.createDocumentBinary
+
+        ```
+
+        [
+
+        "fileinput1",
+
+        {
+
+        "name": "test-name",
+
+        "description": "test-description",
+
+        "folder": "/",
+
+        "fileName": "test-file-name"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.createDocument21
+
+        ```
+
+        [
+
+        {
+
+        "name": "test-name",
+
+        "description": "test-description",
+
+        "folder": "/",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.createDocumentBinary21
+
+        ```
+
+        [
+
+        "fileinput1",
+
+        {
+
+        "name": "test-name",
+
+        "description": "test-description",
+
+        "folder": "/",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.createDocumentBinary21Ext
+
+        ```
+
+        [
+
+        {
+
+        "fileInput": "fileinput1",
+
+        "documentInfo": {
+
+        "name": "test-name",
+
+        "description": "test-description",
+
+        "folder": "/",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "clientRequestId": "64AA5290-15F2-451B-9EF3-4494F66FE59E"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.createDocumentFolder
+
+        ```
+
+        [
+
+        {
+
+        "name": "test-folder",
+
+        "description": "test-folder-description",
+
+        "parentFolder": "/"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocument
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocument'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateDocument'
+        required: true
+      summary: Enviance rest services ver2 documents impl document service create document
+      x-summary-source: derived
+  /ver2/DocumentService.svc/documents/{documentIdOrPath}:
+    get:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.getDocument
+
+        ```
+
+        [
+
+        "/test-name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentInfo
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
+      summary: Enviance rest services ver2 documents impl document service get document info
+      x-summary-source: derived
+    patch:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.updateDocument
+
+        ```
+
+        [
+
+        "/test-name",
+
+        {
+
+        "name": "test-name-update",
+
+        "description": "test-description-update",
+
+        "folder": "/",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==",
+
+        "fileName": "test-file-name"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.updateDocumentBinary
+
+        ```
+
+        [
+
+        "fileinput1",
+
+        "/test-name",
+
+        {
+
+        "name": "test-name-update",
+
+        "description": "test-description-update",
+
+        "folder": "/",
+
+        "fileName": "test-file-name"
+
+        },
+
+        "false",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.updateDocument21
+
+        ```
+
+        [
+
+        "/test-name",
+
+        {
+
+        "name": "test-name-update",
+
+        "description": "test-description-update",
+
+        "folder": "/",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.updateDocumentBinary21
+
+        ```
+
+        [
+
+        "fileinput1",
+
+        "/test-name",
+
+        {
+
+        "name": "test-name-update",
+
+        "description": "test-description-update",
+
+        "folder": "/",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "false",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.updateDocumentBinary21Ext
+
+        ```
+
+        [
+
+        {
+
+        "fileInput": "fileinput1",
+
+        "documentIdOrPath": "/test-name",
+
+        "documentInfo": {
+
+        "name": "test-name-update",
+
+        "description": "test-description-update",
+
+        "folder": "/",
+
+        "fileName": "test-file-name",
+
+        "workflows": [
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst1",
+
+        "customFieldIdOrName": "udf1"
+
+        },
+
+        {
+
+        "workflowIdOrUniqueId": "workflowInst2",
+
+        "customFieldIdOrName": "udf2"
+
+        }
+
+        ]
+
+        },
+
+        "updateExistingVersion": "false",
+
+        "clientRequestId": "64AA5290-15F2-451B-9EF3-4494F66FE47F"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.updateDocumentFolder
+
+        ```
+
+        [
+
+        "/test-folder",
+
+        {
+
+        "name": "test-folder-update",
+
+        "description": "test-folder-description-update",
+
+        "parentFolderIdOrPath": "/"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocument
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: UpdateExistingVersion
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDocument'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateDocument'
+        required: true
+      summary: Enviance rest services ver2 documents impl document service update document
+      x-summary-source: derived
+    delete:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.deleteDocument
+
+        ```
+
+        [
+
+        "/test-name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.deleteDocumentExt
+
+        ```
+
+        [
+
+        {
+
+        "documentIdOrPath": "eccd2310-9b5f-440b-bf0d-91f9803d036b",
+
+        "clientRequestId": "64AA5290-15F2-451B-9EF3-4494F66FE59E"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.documents.deleteDocumentFolder
+
+        ```
+
+        [
+
+        "/test-folder",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocument
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 documents impl document service delete document
+      x-summary-source: derived
+  /ver2/DocumentService.svc/documents/zip:
+    post:
+      tags:
+      - Document
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentsBulk
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetDocumentsBulk'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetDocumentsBulk'
+        required: true
+      summary: Enviance rest services ver2 documents impl document service get documents bulk
+      x-summary-source: derived
+  /ver2/DocumentService.svc/folders:
+    post:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.createDocumentFolder
+
+        ```
+
+        [
+
+        {
+
+        "name": "test-folder",
+
+        "description": "test-folder-description",
+
+        "parentFolder": "/"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocumentFolder
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentFolder'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateDocumentFolder'
+        required: true
+      summary: Enviance rest services ver2 documents impl document service create document…
+      x-summary-source: derived
+  /ver2/DocumentService.svc/folders/{documentFolderIdOrPath}:
+    get:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.getDocumentFolder
+
+        ```
+
+        [
+
+        "/test-folder",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentFolder
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentFolderIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
+      summary: Enviance rest services ver2 documents impl document service get document folder
+      x-summary-source: derived
+    patch:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.updateDocumentFolder
+
+        ```
+
+        [
+
+        "/test-folder",
+
+        {
+
+        "name": "test-folder-update",
+
+        "description": "test-folder-description-update",
+
+        "parentFolderIdOrPath": "/"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocumentFolder
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentFolderIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDocumentFolder'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateDocumentFolder'
+        required: true
+      summary: Enviance rest services ver2 documents impl document service update document…
+      x-summary-source: derived
+    delete:
+      tags:
+      - Document
+      description: 'envianceSdk.documents.deleteDocumentFolder
+
+        ```
+
+        [
+
+        "/test-folder",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocumentFolder
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: documentFolderIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 documents impl document service delete document…
+      x-summary-source: derived
+components:
+  schemas:
+    GetDocumentsBulk:
+      properties:
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentZipItem'
+          uniqueItems: false
+      type: object
+      format: GetDocumentsBulk
+    CreateDocumentFolder:
+      properties:
+        documentFolderInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateDocumentFolder
+    CreateDocument:
+      properties:
+        documentInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateDocument
+    Enviance.RestServices.Ver2.Documents.DocumentZipItem:
+      properties:
+        documentIdOrPath:
+          type: string
+          uniqueItems: false
+        resultDocumentPathName:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Documents.DocumentZipItem
+    Enviance.RestServices.Ver2.Documents.DocumentFolderInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        parentFolderIdOrPath:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Documents.DocumentFolderInfo
+    Enviance.RestServices.Ver2.Documents.DocumentInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        mimeType:
+          type: string
+          uniqueItems: false
+        fileName:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        folder:
+          type: string
+          uniqueItems: false
+        content:
+          type: string
+          uniqueItems: false
+        contentUrl:
+          type: string
+          uniqueItems: false
+        version:
+          type: integer
+          format: int32
+          uniqueItems: false
+        objects:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        tasks:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        workflows:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        NameSuffixOnDuplication:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - None
+          - Timestamp
+          - Increment
+          - Guid
+        comments:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Documents.DocumentInfo
+    UpdateDocument:
+      properties:
+        documentInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
+      type: object
+      format: UpdateDocument
+    UpdateDocumentFolder:
+      properties:
+        documentFolderInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
+      type: object
+      format: UpdateDocumentFolder
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

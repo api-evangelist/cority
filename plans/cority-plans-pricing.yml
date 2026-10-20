@@ -1,0 +1,22 @@
+name: Cority pricing
+generated: '2026-10-20'
+method: searched
+source: https://www.cority.com/pricing/
+audience: business-product
+pricing_basis: negotiated
+published: false
+delivery:
+  delivery: managed
+plan_count: 2
+note: No numeric prices are published; pricing is built to the scope of each organization (solutions, users, integrations).
+plans:
+- name: Standard
+  description: Standard pricing grows as users and modules are added, alongside an annual uplift.
+  price_text: Request a Demo
+  features: []
+  limits: []
+- name: Enterprise
+  description: Enterprise pricing is a fixed fee covering the required modules and integrations, licensed for all employees, with only the annual uplift applying, which gives larger organizations a predictable cost as they scale.
+  price_text: Request a Demo
+  features: []
+  limits: []

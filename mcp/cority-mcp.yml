@@ -1,0 +1,219 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/cority-enviance-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.enviance.com, api.cority.com, www.cority.com, status.cority.com;
+  verdict opaque (https://status.cority.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate
+  tools below are derived from the 92 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one
+  that exists.'
+tools:
+- name: enviance_rest_services_ver2_material_activity_activities_imp
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.CreateActivity
+  method: POST
+  path: /ver2/ActivityService.svc/activities
+  description: Create Activity
+- name: enviance_rest_services_ver2_security_impl_authentication_ser
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.GetCurrentSessionInfo
+  method: GET
+  path: /ver2/AuthenticationService.svc/currentsession
+  description: GET /ver2/AuthenticationService.svc/currentsession
+- name: enviance_rest_services_ver2_batch_request_impl_batch_request
+  operationId: Enviance.RestServices.Ver2.BatchRequest.Impl.BatchRequestService.Execute
+  method: POST
+  path: /ver2/BatchRequestService.svc/batchRequest/execute
+  description: POST /ver2/BatchRequestService.svc/batchRequest/execute
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_batches_q
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchesQuery
+  method: POST
+  path: /ver2/BulkService.svc/batches
+  description: "envianceSdk.bulk.queryBatches\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_batch_fil
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchFileInfo
+  method: GET
+  path: /ver2/BulkService.svc/batchFileInfo/{id}
+  description: "envianceSdk.bulk.batchFileInfo\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_create_ba
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.CreateBatch
+  method: POST
+  path: /ver2/BulkService.svc/createBatch
+  description: "envianceSdk.bulk.createBatch\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_events_qu
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.EventsQuery
+  method: POST
+  path: /ver2/BulkService.svc/events
+  description: "envianceSdk.bulk.queryEvents\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_file_info
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.FileInfo
+  method: GET
+  path: /ver2/BulkService.svc/fileInfo/{id}
+  description: "envianceSdk.bulk.fileInfo\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_set_cance
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetCanceled
+  method: POST
+  path: /ver2/BulkService.svc/setCanceled
+  description: "envianceSdk.bulk.setCanceled\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_set_pause
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetPaused
+  method: POST
+  path: /ver2/BulkService.svc/setPaused
+  description: "envianceSdk.bulk.setPaused\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_set_resum
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetResumed
+  method: POST
+  path: /ver2/BulkService.svc/setResumed
+  description: "envianceSdk.bulk.setResumed\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_load_stat
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.LoadStatusInfo
+  method: GET
+  path: /ver2/BulkService.svc/statusInfo
+  description: "envianceSdk.bulk.statusInfo\r"
+- name: enviance_rest_services_ver2_bulk_impl_bulk_service_upload_fi
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.UploadFile
+  method: POST
+  path: /ver2/BulkService.svc/upload
+  description: "envianceSdk.bulk.uploadFileBinary\r"
+- name: enviance_rest_services_ver2_material_activity_chemicals_impl
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.CreateChemicalGroup
+  method: POST
+  path: /ver2/ChemicalGroupService.svc/chemicalGroups
+  description: "envianceSdk.chemicalgroups.createChemicalGroup\r"
+- name: enviance_rest_services_ver2_async_impl_command_service_get_c
+  operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.GetCommand
+  method: GET
+  path: /ver2/CommandService.svc/commands/{commandId}
+  description: "Returns information about a previously submitted command (any API which is asynchronous).\r"
+- name: enviance_rest_services_ver2_async_impl_command_service_delet
+  operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.DeleteCommand
+  method: DELETE
+  path: /ver2/CommandService.svc/commands/{commandId}
+  description: "envianceSdk.commands.deleteCommand\r"
+- name: enviance_rest_services_ver2_compliance_model_impl_compliance
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.CompliancePermissionService.GetLocationPermissions
+  method: GET
+  path: /ver2/CompliancePermissionService.svc/locations/permissions/{locationId}
+  description: Get Permissions per location
+- name: enviance_rest_services_ver2_custom_fields_impl_custom_field_
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.CreateCustomField
+  method: POST
+  path: /ver2/CostomFieldService.svc/customFields
+  description: POST /ver2/CostomFieldService.svc/customFields
+- name: enviance_rest_services_ver2_data_impl_data_service_get_calcu
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationPeriods
+  method: POST
+  path: /ver2/DataService.svc/calculations/calculationperiods
+  description: "envianceSdk.data.getCalculationPeriods\r"
+- name: enviance_rest_services_ver2_data_impl_data_service_delete_no
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNonNumericData
+  method: POST
+  path: /ver2/DataService.svc/nonnumericdata/deletedatacommands
+  description: Deletes Non-Numeric Data Points for one Non-Numeric Requirement. Deleting Non-Numeric Data Points is an synchronous process. Deletions  of
+    non-numeric datapoint
+- name: enviance_rest_services_ver2_data_impl_data_service_enter_non
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNonNumericData
+  method: POST
+  path: /ver2/DataService.svc/nonnumericdata/enterdatacommands
+  description: "envianceSdk.data.enterNonNumericData\r"
+- name: enviance_rest_services_ver2_data_impl_data_service_delete_nu
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNumericData
+  method: POST
+  path: /ver2/DataService.svc/numericdata/deletedatacommands
+  description: Deletes all Data Points for a set of one or more Parameters, within a specified date range. Deleting Data Points is an asynchronous
+    process. Upon successfully r
+- name: enviance_rest_services_ver2_data_impl_data_service_enter_num
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNumericData
+  method: POST
+  path: /ver2/DataService.svc/numericdata/enterdatacommands
+  description: Processes a set of one or more numeric Data Points. Entering Data Points is an asynchronous process. Upon successfully receiving
+    and queueing the data, a comman
+- name: enviance_rest_services_ver2_data_impl_data_service_download_
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DownloadExcelData
+  method: POST
+  path: /ver2/DataService.svc/numericdata/exceldata
+  description: "Download Excel template.\r"
+- name: enviance_rest_services_ver2_data_impl_data_service_upload_ex
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcel2Data
+  method: POST
+  path: /ver2/DataService.svc/numericdata/uploadexcel2commands
+  description: Upload excel file (base64)
+- name: enviance_rest_services_ver2_documents_impl_document_service_
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocument
+  method: POST
+  path: /ver2/DocumentService.svc/documents
+  description: "envianceSdk.documents.createDocument\r"
+- name: enviance_rest_services_ver2_domain_whitelist_impl_domain_whi
+  operationId: Enviance.RestServices.Ver2.DomainWhitelist.Impl.DomainWhitelistService.GetDomainWhitelist
+  method: GET
+  path: /ver2/DomainWhitelistService.svc/domainWhitelist
+  description: GET /ver2/DomainWhitelistService.svc/domainWhitelist
+- name: enviance_rest_services_ver2_eql_impl_eql_service_create_data
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.CreateDataView
+  method: POST
+  path: /ver2/EqlService.svc/dataview
+  description: "Save EQL query as a data view.\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_update_data
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataView
+  method: PATCH
+  path: /ver2/EqlService.svc/dataview/{idOrName}
+  description: "Update a data view info\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_get_data_vi
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataView
+  method: GET
+  path: /ver2/EqlService.svc/dataview/{idOrName}
+  description: "envianceSdk.eql.getDataView\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_delete_data
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.DeleteDataView
+  method: DELETE
+  path: /ver2/EqlService.svc/dataview/{idOrName}
+  description: "envianceSdk.eql.deleteDataView\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_get_data_pu
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataPublishConnections
+  method: GET
+  path: /ver2/EqlService.svc/dataview/publishconnections
+  description: GET /ver2/EqlService.svc/dataview/publishconnections
+- name: enviance_rest_services_ver2_eql_impl_eql_service_execute_asy
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsync
+  method: POST
+  path: /ver2/EqlService.svc/executeAsync
+  description: "envianceSdk.eql.executeExtAsync\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_execute
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.Execute
+  method: POST
+  path: /ver2/EqlService.svc/query
+  description: "envianceSdk.eql.execute\r"
+- name: enviance_rest_services_ver2_eql_impl_eql_service_execute_as_
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGet
+  method: GET
+  path: /ver2/EqlService.svc/query
+  description: GET /ver2/EqlService.svc/query
+- name: enviance_rest_services_ver2_events_impl_event_service_create
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.CreateEvent
+  method: POST
+  path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events
+  description: 'Creates a new Event in the specified Event Log. Events can only be created for manual Event Logs. Attempting to create an Event
+    on an  automatic Event Log will '
+- name: enviance_rest_services_ver2_events_impl_event_service_get_ev
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.GetEvent
+  method: GET
+  path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  description: "envianceSdk.events.getEvent\r"
+- name: enviance_rest_services_ver2_events_impl_event_service_update
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.UpdateEvent
+  method: PATCH
+  path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  description: "Updates an existing Event.\r"
+- name: enviance_rest_services_ver2_events_impl_event_service_delete
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.DeleteEvent
+  method: DELETE
+  path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  description: "envianceSdk.events.deleteEvent\r"
+- name: enviance_rest_services_ver2_form_templates_impl_form_templat
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CreateFormTemplate
+  method: POST
+  path: /ver2/FormTemplateService.svc/formtemplates
+  description: "Create form template in enviance system\r"

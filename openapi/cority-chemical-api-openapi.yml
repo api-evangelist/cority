@@ -1,0 +1,1075 @@
+openapi: 3.2.0
+info:
+  title: Cority Chemical API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Chemical across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Chemical
+paths:
+  /ver2/ChemicalService.svc/chemicals:
+    post:
+      tags:
+      - Chemical
+      description: 'envianceSdk.chemicals.createChemical
+
+        ```
+
+        [
+
+        {
+
+        "name": "Chemical Name",
+
+        "casnum": "0",
+
+        "alias": "chemicalAlias",
+
+        "description": "chemical description",
+
+        "historyItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "Mw": "1",
+
+        "antA": "1",
+
+        "antB": "1",
+
+        "antC": "1",
+
+        "antAk": "1",
+
+        "antBk": "1",
+
+        "vp60": "1",
+
+        "density": "1",
+
+        "dipprA": "1",
+
+        "dipprB": "1",
+
+        "dipprC": "1",
+
+        "dipprD": "1",
+
+        "dipprE": "1",
+
+        "dipprF": "1",
+
+        "dipprG": "1",
+
+        "rcraHaz": "false",
+
+        "hap": "false",
+
+        "tri": "false",
+
+        "ehs": "false",
+
+        "pbt": "false",
+
+        "dioxin": "false",
+
+        "caa112R": "false",
+
+        "pac": "false",
+
+        "diisocyan": "false",
+
+        "cerclaHaz": "false",
+
+        "airToxicEmissionInventory": "false",
+
+        "solid": "false",
+
+        "nonEvaporative": "false",
+
+        "rcraVoc": "false",
+
+        "rcraSvoc": "false",
+
+        "caaVoc": "false"
+
+        },
+
+        {
+
+        "beginDate": "2013-02-01T20:00:00",
+
+        "Mw": "2",
+
+        "antA": "3",
+
+        "antB": "4",
+
+        "antC": "5",
+
+        "antAk": "6",
+
+        "antBk": "7",
+
+        "vp60": "8",
+
+        "density": "9",
+
+        "dipprA": "10",
+
+        "dipprB": "11",
+
+        "dipprC": "12",
+
+        "dipprD": "13",
+
+        "dipprE": "14",
+
+        "dipprF": "15",
+
+        "dipprG": "16",
+
+        "rcraHaz": "false",
+
+        "hap": "true",
+
+        "tri": "false",
+
+        "ehs": "true",
+
+        "pbt": "false",
+
+        "dioxin": "false",
+
+        "caa112R": "false",
+
+        "pac": "false",
+
+        "diisocyan": "false",
+
+        "cerclaHaz": "false",
+
+        "airToxicEmissionInventory": "false",
+
+        "solid": "false",
+
+        "nonEvaporative": "false",
+
+        "rcraVoc": "true",
+
+        "rcraSvoc": "false",
+
+        "caaVoc": "false"
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicalgroups.createChemicalGroup
+
+        ```
+
+        [
+
+        {
+
+        "name": "Chemical Group Name",
+
+        "description": "Chemical Group Description",
+
+        "chemicals": [
+
+        "896197B8-E007-4169-8C03-D9D0E8411150",
+
+        "FF710D9F-4367-4C0C-A5CB-497CB18FA842"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicallists.createChemicalList
+
+        ```
+
+        [
+
+        {
+
+        "name": "Chemical List Name",
+
+        "description": "Chemical List Description",
+
+        "chemicalListHistoryItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "1"
+
+        },
+
+        {
+
+        "chemicalIdOrAlias": "5376DF01-45B5-4153-ACCF-8E208DB69979",
+
+        "limit": "1"
+
+        }
+
+        ]
+
+        },
+
+        {
+
+        "beginDate": "2013-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "3"
+
+        }
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.CreateChemical
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateChemical'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateChemical'
+        required: true
+      summary: Enviance rest services ver2 material activity chemicals impl chemical service…
+      x-summary-source: derived
+  /ver2/ChemicalService.svc/chemicals/{chemicalIdOrAlias}:
+    get:
+      tags:
+      - Chemical
+      description: 'envianceSdk.chemicals.getChemical
+
+        ```
+
+        [
+
+        "Chemical alias",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicalgroups.getChemicalGroup
+
+        ```
+
+        [
+
+        "Chemical Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicallists.getChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.GetChemical
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+      summary: Enviance rest services ver2 material activity chemicals impl chemical service…
+      x-summary-source: derived
+    patch:
+      tags:
+      - Chemical
+      description: 'envianceSdk.chemicals.updateChemical
+
+        ```
+
+        [
+
+        "Chemical Alias",
+
+        {
+
+        "name": "Chemical Name",
+
+        "casnum": "0",
+
+        "alias": "chemicalAlias",
+
+        "description": "chemical description",
+
+        "historyItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "Mw": "1",
+
+        "antA": "1",
+
+        "antB": "1",
+
+        "antC": "1",
+
+        "antAk": "1",
+
+        "antBk": "1",
+
+        "vp60": "1",
+
+        "density": "1",
+
+        "dipprA": "1",
+
+        "dipprB": "1",
+
+        "dipprC": "1",
+
+        "dipprD": "1",
+
+        "dipprE": "1",
+
+        "dipprF": "1",
+
+        "dipprG": "1",
+
+        "rcraHaz": "false",
+
+        "hap": "false",
+
+        "tri": "false",
+
+        "ehs": "false",
+
+        "pbt": "false",
+
+        "dioxin": "false",
+
+        "caa112R": "false",
+
+        "pac": "false",
+
+        "diisocyan": "false",
+
+        "cerclaHaz": "false",
+
+        "airToxicEmissionInventory": "false",
+
+        "solid": "false",
+
+        "nonEvaporative": "false",
+
+        "rcraVoc": "false",
+
+        "rcraSvoc": "false",
+
+        "caaVoc": "false"
+
+        },
+
+        {
+
+        "beginDate": "2013-01-01T20:00:00",
+
+        "Mw": "2",
+
+        "antA": "3",
+
+        "antB": "4",
+
+        "antC": "5",
+
+        "antAk": "6",
+
+        "antBk": "7",
+
+        "vp60": "8",
+
+        "density": "9",
+
+        "dipprA": "10",
+
+        "dipprB": "11",
+
+        "dipprC": "12",
+
+        "dipprD": "13",
+
+        "dipprE": "14",
+
+        "dipprF": "15",
+
+        "dipprG": "16",
+
+        "rcraHaz": "false",
+
+        "hap": "true",
+
+        "tri": "false",
+
+        "ehs": "true",
+
+        "pbt": "false",
+
+        "dioxin": "false",
+
+        "caa112R": "false",
+
+        "pac": "false",
+
+        "diisocyan": "false",
+
+        "cerclaHaz": "false",
+
+        "airToxicEmissionInventory": "false",
+
+        "solid": "false",
+
+        "nonEvaporative": "false",
+
+        "rcraVoc": "true",
+
+        "rcraSvoc": "false",
+
+        "caaVoc": "false"
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicalgroups.updateChemicalGroup
+
+        ```
+
+        [
+
+        "Chemical Group Name",
+
+        {
+
+        "name": "Chemical Group Name",
+
+        "description": "Chemical Group Description",
+
+        "chemicals": [
+
+        "896197B8-E007-4169-8C03-D9D0E8411150",
+
+        "FF710D9F-4367-4C0C-A5CB-497CB18FA842"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicallists.updateChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        {
+
+        "name": "Chemical List Name",
+
+        "description": "Chemical List Description",
+
+        "chemicalListHistoryItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "1"
+
+        },
+
+        {
+
+        "chemicalIdOrAlias": "5376DF01-45B5-4153-ACCF-8E208DB69979",
+
+        "limit": "1"
+
+        }
+
+        ]
+
+        },
+
+        {
+
+        "beginDate": "2013-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "3"
+
+        }
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.UpdateChemical
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateChemical'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateChemical'
+        required: true
+      summary: Enviance rest services ver2 material activity chemicals impl chemical service…
+      x-summary-source: derived
+    delete:
+      tags:
+      - Chemical
+      description: 'envianceSdk.chemicals.deleteChemical
+
+        ```
+
+        [
+
+        "Chemical Alias",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicalgroups.deleteChemicalGroup
+
+        ```
+
+        [
+
+        "Chemical Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicalgroups.deleteChemicalGroup
+
+        ```
+
+        [
+
+        "Chemical Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.chemicallists.deleteChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.DeleteChemical
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 material activity chemicals impl chemical service…
+      x-summary-source: derived
+components:
+  schemas:
+    UpdateChemical:
+      properties:
+        chemicalInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+      type: object
+      format: UpdateChemical
+    CreateChemical:
+      properties:
+        chemicalInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateChemical
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo:
+      properties:
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        mw:
+          type: number
+          format: double
+          uniqueItems: false
+        antA:
+          type: number
+          format: double
+          uniqueItems: false
+        antB:
+          type: number
+          format: double
+          uniqueItems: false
+        antC:
+          type: number
+          format: double
+          uniqueItems: false
+        antAk:
+          type: number
+          format: double
+          uniqueItems: false
+        antBk:
+          type: number
+          format: double
+          uniqueItems: false
+        vp60:
+          type: number
+          format: double
+          uniqueItems: false
+        density:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprA:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprB:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprC:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprD:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprE:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprF:
+          type: number
+          format: double
+          uniqueItems: false
+        dipprG:
+          type: number
+          format: double
+          uniqueItems: false
+        rcraHaz:
+          type: boolean
+          uniqueItems: false
+        hap:
+          type: boolean
+          uniqueItems: false
+        tri:
+          type: boolean
+          uniqueItems: false
+        ehs:
+          type: boolean
+          uniqueItems: false
+        pbt:
+          type: boolean
+          uniqueItems: false
+        dioxin:
+          type: boolean
+          uniqueItems: false
+        caa112R:
+          type: boolean
+          uniqueItems: false
+        pac:
+          type: boolean
+          uniqueItems: false
+        diisocyan:
+          type: boolean
+          uniqueItems: false
+        cerclaHaz:
+          type: boolean
+          uniqueItems: false
+        airToxicEmissionInventory:
+          type: boolean
+          uniqueItems: false
+        solid:
+          type: boolean
+          uniqueItems: false
+        nonEvaporative:
+          type: boolean
+          uniqueItems: false
+        rcraVoc:
+          type: boolean
+          uniqueItems: false
+        rcraSvoc:
+          type: boolean
+          uniqueItems: false
+        caaVoc:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        casNum:
+          type: string
+          uniqueItems: false
+        alias:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        historyItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

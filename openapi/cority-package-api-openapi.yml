@@ -1,0 +1,1294 @@
+openapi: 3.2.0
+info:
+  title: Cority Package API
+  version: Platform.v2026.2.2.1.20260923
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+  description: 'Operations tagged Package across 2 of this provider''s published API definitions: cority-enviance-swagger.json, cority-enviance-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.enviance.com
+tags:
+- name: Package
+paths:
+  /ver2/PackageService.svc/packages:
+    post:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.createPackage
+
+        ```
+
+        [
+
+        {
+
+        "name": "Tracker 001",
+
+        "description": "Incident tracking and management.",
+
+        "displayPage": "/index.html",
+
+        "iconSrc": "/imgs/icon.png",
+
+        "isLocked": "false"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.createPackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        {
+
+        "package": "p1",
+
+        "path": "p1.htm",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg=="
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePackage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePackage'
+        required: true
+      summary: Enviance rest services ver2 packages impl package service create package
+      x-summary-source: derived
+  /ver2/PackageService.svc/packages/{packageIdOrName}:
+    get:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.getPackage
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.getPackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.getPackageAppData
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "key1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        ["ApplicationID", "someKey", "onsuccess", "onerror"] // Expected value should be valid JSON, not scalar value or string'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+      summary: Enviance rest services ver2 packages impl package service get package
+      x-summary-source: derived
+    patch:
+      tags:
+      - Package
+      description: 'Updates an existing Enviance App (package).
+
+
+        **Security:** Requires Manage Enviance Apps system right.
+
+
+        **SDK API:** `envianceSdk.packages.updatePackage(packageIdOrName, packageInfo, onsuccess, onerror)`
+
+
+        ```
+
+        PATCH /ver2/PackageService.svc/packages/bdba60aa-cb36-43bf-ba2e-7532c49968d0 HTTP/1.1
+
+
+        {
+
+        "packageInfo": {
+
+        "name": "Incident Tracker",
+
+        "description": "Incident tracking and management.",
+
+        "content": "UEsDBBQABgAIAAAAIQCMGvGG3QEAAFMIAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAACAAAAAAAAAAAAAAAAAAAAAAAA�"
+
+        "displayPage": "/index.html",
+
+        "iconSrc": "/imgs/icon.png",
+
+        "isLocked": "true"
+
+        }
+
+        }
+
+        {
+
+        "id": "4657bd77-fced-42be-a491-d63a59c42a4c",
+
+        "name": "Incident Tracker",
+
+        "description": "Incident tracking and management.",
+
+        "displayPage": "/index.html",
+
+        "iconSrc": "/imgs/icon.png",
+
+        "isLocked": "false",
+
+        "created": "2011-02-02T08:44",
+
+        "createdBy": "JSmith",
+
+        "lastModified": "2012-12-03T21:35"
+
+        }
+
+
+        ```
+
+
+        envianceSdk.packages.updatePackage
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        {
+
+        "name": "Tracker 002",
+
+        "description": "Incident tracking and management.",
+
+        "displayPage": "/index.html",
+
+        "iconSrc": "/imgs/icon.png",
+
+        "isLocked": "false"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.updatePackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        {
+
+        "package": "p1",
+
+        "path": "p1.htm",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg=="
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePackage'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePackage'
+        required: true
+      summary: Enviance rest services ver2 packages impl package service update package
+      x-summary-source: derived
+    delete:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.deletePackage
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.deletePackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.deletePackageAppData
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "key1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackage
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 packages impl package service delete package
+      x-summary-source: derived
+  /ver2/PackageService.svc/packages/{packageIdOrName}/data/{key}:
+    get:
+      tags:
+      - Package
+      description: 'Retrieves an existing Enviance App (Package) data key-value pair, using the specified unique key. If user does not have permissions to retrieve data it returns empty string. No Errors thrown.
+
+
+        **Security:** Requires Manage Enviance Apps system right.
+
+
+        **SDK API:** `envianceSdk.packages.getPackageAppData(packageIdOrName, key, onsuccess, onerror)`
+
+
+        ```
+
+        GET /ver2/PackageService.svc/packages/Incident%20Tracker HTTP/1.1
+
+
+        //RESPONSE
+
+        {
+
+        "id": "4657bd77-fced-42be-a491-d63a59c42a4c",
+
+        "name": "Incident Tracker",
+
+        "description": "Incident tracking and management.",
+
+        "displayPage": "/index.html",
+
+        "iconSrc": "/imgs/icon.png",
+
+        "isLocked": "false",
+
+        "created": "2011-02-02T08:44",
+
+        "createdBy": "JSmith",
+
+        "lastModified": "2012-12-03T21:35"
+
+        }
+
+
+        ```
+
+
+        envianceSdk.packages.getPackageAppData
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "key1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        ["ApplicationID", "someKey", "onsuccess", "onerror"] // Expected value should be valid JSON, not scalar value or string'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageAppData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dtype
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+      summary: Enviance rest services ver2 packages impl package service get package app data
+      x-summary-source: derived
+    put:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.savePackageAppData
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "key1",
+
+        "value-101010",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.packages.savePackageAppDataJson
+
+        ```
+
+        [
+
+        "ApplicationID",
+
+        "someKey",
+
+        {
+
+        "field1": 1,
+
+        "field2": "someText"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.SavePackageAppData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavePackageAppData'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SavePackageAppData'
+        required: true
+      summary: Enviance rest services ver2 packages impl package service save package app data
+      x-summary-source: derived
+    delete:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.deletePackageAppData
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "key1",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageAppData
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 packages impl package service delete package app…
+      x-summary-source: derived
+  /ver2/PackageService.svc/packages/{packageIdOrName}/items:
+    post:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.createPackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        {
+
+        "package": "p1",
+
+        "path": "p1.htm",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg=="
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackageItem
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePackageItem'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreatePackageItem'
+        required: true
+      summary: Enviance rest services ver2 packages impl package service create package item
+      x-summary-source: derived
+  /ver2/PackageService.svc/packages/{packageIdOrName}/items/{itemIdOrPath}:
+    get:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.getPackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageItem
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: itemIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+      summary: Enviance rest services ver2 packages impl package service get package item
+      x-summary-source: derived
+    patch:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.updatePackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        {
+
+        "package": "p1",
+
+        "path": "p1.htm",
+
+        "content": "77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg=="
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackageItem
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: itemIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePackageItem'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdatePackageItem'
+        required: true
+      summary: Enviance rest services ver2 packages impl package service update package item
+      x-summary-source: derived
+    delete:
+      tags:
+      - Package
+      description: 'envianceSdk.packages.deletePackageItem
+
+        ```
+
+        [
+
+        "Tracker 001",
+
+        "p1.htm",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageItem
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: packageIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: itemIdOrPath
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 packages impl package service delete package item
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.Packages.PackageItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        packageIdOrName:
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        content:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Packages.PackageItemInfo
+    UpdatePackage:
+      properties:
+        packageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+      type: object
+      format: UpdatePackage
+    System.Object:
+      type: object
+      format: System.Object
+    SavePackageAppData:
+      properties:
+        value:
+          $ref: '#/components/schemas/System.Object'
+        dtype:
+          type: string
+          uniqueItems: false
+      type: object
+      format: SavePackageAppData
+    CreatePackage:
+      properties:
+        packageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreatePackage
+    UpdatePackageItem:
+      properties:
+        packageItemInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+      type: object
+      format: UpdatePackageItem
+    CreatePackageItem:
+      properties:
+        packageItemInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreatePackageItem
+    Enviance.RestServices.Ver2.Packages.PackageInfo:
+      properties:
+        isRoutingEnabled:
+          type: boolean
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        displayPage:
+          type: string
+          uniqueItems: false
+        iconSrc:
+          type: string
+          uniqueItems: false
+        isLocked:
+          type: boolean
+          uniqueItems: false
+        created:
+          type: string
+          format: date-time
+          uniqueItems: false
+        createdBy:
+          type: string
+          uniqueItems: false
+        lastModified:
+          type: string
+          format: date-time
+          uniqueItems: false
+        content:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Packages.PackageInfo
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
+x-refined-from:
+- cority-enviance-swagger.json
+- cority-enviance-openapi.yml

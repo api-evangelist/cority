@@ -71,6 +71,9 @@ maintainers:
   email: info@apis.io
 
 common:
+- type: CapabilityMap
+  url: capabilities/cority-capability-edges.yml
+  name: Cority Business Capability Map
 - type: AgenticAccess
   url: agentic-access/cority-agentic-access.yml
 - type: Plans

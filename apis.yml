@@ -208,6 +208,8 @@ apis:
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
+  - Chemicals
+  tags_raw:
   - Chemical
   properties:
   - type: OpenAPI
@@ -306,6 +308,8 @@ apis:
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
+  - Documents
+  tags_raw:
   - Document
   properties:
   - type: OpenAPI
@@ -656,6 +660,8 @@ apis:
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
+  - Workflows
+  tags_raw:
   - Workflow
   properties:
   - type: OpenAPI

@@ -64,6 +64,158 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cority is a company surfaced as a portfolio company of norwest-venture-partners and added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead awaiting the enrichment pipeline.
+Cority is an enterprise Environmental, Health, Safety, and Quality (EHSQ) and sustainability software provider, founded in 1985 as Medgate and headquartered in Toronto, Canada. Its CorityOne platform converges occupational health, safety and incident management, industrial hygiene, environmental and ESG/sustainability reporting, quality, and audit/compliance management for more than 1,500 enterprise organizations worldwide, layered with its Cortex AI agents. Cority exposes RESTful integration through the Cority Enviance API (Swagger-documented), used to connect CorityOne with corporate and third-party systems under a Connectors license.
 
-Backed by: norwest-venture-partners — https://cority.com
+**Areas:** Company · Environmental Health and Safety · EHS · Sustainability · ESG · Occupational Health · Quality Management · Compliance · Enterprise Software
+
+## Cority on APIs.io
+
+Everything profiled for Cority is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cority/](https://apis.io/providers/cority/)** — or go straight to one of the APIs or properties below.
+
+### APIs (39)
+
+- [Cority Activity API](https://apis.io/apis/cority/cority-activity-api/) — The Activity API from Cority — 2 operation(s) for activity.
+- [Cority Authentication API](https://apis.io/apis/cority/cority-authentication-api/) — The Authentication API from Cority — 6 operation(s) for authentication.
+- [Cority Batch Request API](https://apis.io/apis/cority/cority-batchrequest-api/) — The BatchRequest API from Cority — 1 operation(s) for batchrequest.
+- [Cority Bulk API](https://apis.io/apis/cority/cority-bulk-api/) — The Bulk API from Cority — 10 operation(s) for bulk.
+- [Cority Chemical API](https://apis.io/apis/cority/cority-chemical-api/) — The Chemical API from Cority — 2 operation(s) for chemical.
+- [Cority Chemical Group API](https://apis.io/apis/cority/cority-chemicalgroup-api/) — The ChemicalGroup API from Cority — 3 operation(s) for chemicalgroup.
+- [Cority Chemical List API](https://apis.io/apis/cority/cority-chemicallist-api/) — The ChemicalList API from Cority — 3 operation(s) for chemicallist.
+- [Cority Command API](https://apis.io/apis/cority/cority-command-api/) — The Command API from Cority — 1 operation(s) for command.
+- [Cority Compliance API](https://apis.io/apis/cority/cority-compliance-api/) — The Compliance API from Cority — 3 operation(s) for compliance.
+- [Cority Compliance Permissions API](https://apis.io/apis/cority/cority-compliancepermissions-api/) — The CompliancePermissions API from Cority — 1 operation(s) for compliancepermissions.
+- [Cority Data API](https://apis.io/apis/cority/cority-data-api/) — The Data API from Cority — 10 operation(s) for data.
+- [Cority Document API](https://apis.io/apis/cority/cority-document-api/) — The Document API from Cority — 5 operation(s) for document.
+- [Cority Domain Whitelist Service API](https://apis.io/apis/cority/cority-domainwhitelistservice-api/) — The DomainWhitelistService API from Cority — 1 operation(s) for domainwhitelistservice.
+- [Cority Eql API](https://apis.io/apis/cority/cority-eql-api/) — The Eql API from Cority — 7 operation(s) for eql.
+- [Cority Event API](https://apis.io/apis/cority/cority-event-api/) — The Event API from Cority — 2 operation(s) for event.
+- [Cority Form Template API](https://apis.io/apis/cority/cority-formtemplate-api/) — The FormTemplate API from Cority — 7 operation(s) for formtemplate.
+- [Cority Main Menu Service API](https://apis.io/apis/cority/cority-mainmenuservice-api/) — The MainMenuService API from Cority — 1 operation(s) for mainmenuservice.
+- [Cority Material API](https://apis.io/apis/cority/cority-material-api/) — The Material API from Cority — 2 operation(s) for material.
+- [Cority Material Data API](https://apis.io/apis/cority/cority-materialdata-api/) — The MaterialData API from Cority — 5 operation(s) for materialdata.
+- [Cority Material Group API](https://apis.io/apis/cority/cority-materialgroup-api/) — The MaterialGroup API from Cority — 3 operation(s) for materialgroup.
+- [Cority Material Property API](https://apis.io/apis/cority/cority-materialproperty-api/) — The MaterialProperty API from Cority — 2 operation(s) for materialproperty.
+- [Cority Material Template API](https://apis.io/apis/cority/cority-materialtemplate-api/) — The MaterialTemplate API from Cority — 2 operation(s) for materialtemplate.
+- [Cority Message API](https://apis.io/apis/cority/cority-message-api/) — The Message API from Cority — 2 operation(s) for message.
+- [Cority Package API](https://apis.io/apis/cority/cority-package-api/) — The Package API from Cority — 5 operation(s) for package.
+- [Cority Portal API](https://apis.io/apis/cority/cority-portal-api/) — The Portal API from Cority — 13 operation(s) for portal.
+- [Cority Report API](https://apis.io/apis/cority/cority-report-api/) — The Report API from Cority — 1 operation(s) for report.
+- [Cority Requirement API](https://apis.io/apis/cority/cority-requirement-api/) — The Requirement API from Cority — 4 operation(s) for requirement.
+- [Cority SCIM Identity API](https://apis.io/apis/cority/cority-scimidentity-api/) — The ScimIdentity API from Cority — 9 operation(s) for scimidentity.
+- [Cority Security API](https://apis.io/apis/cority/cority-security-api/) — The Security API from Cority — 6 operation(s) for security.
+- [Cority Sync API](https://apis.io/apis/cority/cority-sync-api/) — The Sync API from Cority — 1 operation(s) for sync.
+- [Cority Tag API](https://apis.io/apis/cority/cority-tag-api/) — The Tag API from Cority — 2 operation(s) for tag.
+- [Cority Tag Scheme API](https://apis.io/apis/cority/cority-tagscheme-api/) — The TagScheme API from Cority — 2 operation(s) for tagscheme.
+- [Cority Task API](https://apis.io/apis/cority/cority-task-api/) — The Task API from Cority — 5 operation(s) for task.
+- [Cority UOM Service API](https://apis.io/apis/cority/cority-uomservice-api/) — The UOMService API from Cority — 4 operation(s) for uomservice.
+- [Cority UUID API](https://apis.io/apis/cority/cority-uuid-api/) — The UUID API from Cority — 2 operation(s) for uuid.
+- [Cority Wab API](https://apis.io/apis/cority/cority-wab-api/) — The Wab API from Cority — 1 operation(s) for wab.
+- [Cority Workflow API](https://apis.io/apis/cority/cority-workflow-api/) — The Workflow API from Cority — 18 operation(s) for workflow.
+- [Cority Workflow Role API](https://apis.io/apis/cority/cority-workflowrole-api/) — The WorkflowRole API from Cority — 3 operation(s) for workflowrole.
+- [Cority Custom Field API](https://apis.io/apis/cority/cority-custom-field-api/) — The Custom Field API from Cority — 3 operation(s) for custom field.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Cority Agentic Access](https://apis.io/agentic-access/cority/cority-agentic-access/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Cority API Rules](https://apis.io/rules/cority/cority-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cority Authentication](https://apis.io/security/cority/cority-authentication/)
+- [Cority Domain Security](https://apis.io/security/cority/cority-domain-security/)
+- [Cority Trust Center](https://apis.io/security/cority/cority-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cority Plans Pricing](https://apis.io/plans/cority/cority-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cority Rate Limits](https://apis.io/rate-limits/cority/cority-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cority.com)
+- [Documentation](https://api.enviance.com/)
+- [API reference](https://api.enviance.com/swagger)
+- [Sign up](https://www.cority.com/get-a-demo/)
+- [Support](https://www.cority.com/contact-us/)
+- [Blog](https://www.cority.com/resources/blog/)
+- [Security](https://www.cority.com/security/)
+- [Compliance](https://www.cority.com/legal-center/security)
+- [Trust centre](https://trust.cority.com/)
+- [Terms of service](https://www.cority.com/legal-center/terms-conditions/)
+- [Privacy policy](https://www.cority.com/privacy-policy/)
+- [Status](https://status.cority.com/)
+
+## API Evangelist rating
+
+**Kin Score 51.4** — developing · rubric 0.24.0 · scored 2026-10-20
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.8 |
+| Contract quality | 38.1 |
+| Contract governance | 80.9 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 61.1 |
+
+**Agent readiness 43.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | unknown |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cority/](https://apis.io/providers/cority/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cority: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cority/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
